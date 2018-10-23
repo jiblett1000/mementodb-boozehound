@@ -11,13 +11,14 @@ var unit_plurals = {
 
 for (i = 0; i < ingredients.length; i++) {
 
-  amount = ingredients[i].attr("Amount");
-  name = ingredients[i].field("Name");
+  var amount = ingredients[i].attr("Amount");
+  var name = ingredients[i].field("Name");
+
   if (amount > 1) {
-    unit = unit_plurals[ingredients[i].attr("Unit")];
+    var unit = unit_plurals[ingredients[i].attr("Unit")];
   }
   else {
-    unit = ingredients[i].attr("Unit");
+    var unit = ingredients[i].attr("Unit");
   }
 
 
