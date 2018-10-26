@@ -1,8 +1,7 @@
 function cocktail_glass_filled(){
 
   var finished_volume = +field("Finished Volume (oz)");
-  var glassware = field("Glassware")[0].field("Name");
-  var glassware_capacity = field("Glassware")[0].field("Capacity (oz)");
+  var glassware = field("Glassware")[0];
   var served = field("Served")[0].field("Name");
   var percent = "";
 
@@ -13,6 +12,9 @@ function cocktail_glass_filled(){
   }
 
   else {
+
+    var glassware_name = glassware.field("Name");
+    var glassware_capacity = glassware.field("Capacity (oz)");
 
     switch (served) {
       case "On the Rocks":
