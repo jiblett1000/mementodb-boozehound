@@ -1,30 +1,34 @@
-var ingredients = field("Ingredients");
-var i;
-var sum = 0;
+function cocktail_abv(){
 
-for (i = 0; i < ingredients.length; i++) {
+  var ingredients = field("Ingredients");
+  var i;
+  var sum = 0;
 
-  var unit = ingredients[i].attr("Unit");
-  var abv = ingredients[i].field("ABV");
-  var amount = ingredients[i].attr("Amount");
+  for (i = 0; i < ingredients.length; i++) {
 
-  switch (unit) {
-    case "oz":
-      sum += amount*abv;
-      break;
-    case "Dash":
-      sum += (amount*0.0311)*abv;
-      break;
-    case "Barspoon":
-      sum += (amount*0.167)*abv;
-      break;
-    case "Piece":
-      sum += 0;
-      break;
-    case "Drop":
-      sum += (amount*0.0016907)*abv;
-      break;
+    var unit = ingredients[i].attr("Unit");
+    var abv = ingredients[i].field("ABV");
+    var amount = ingredients[i].attr("Amount");
+
+    switch (unit) {
+      case "oz":
+        sum += amount*abv;
+        break;
+      case "Dash":
+        sum += (amount*0.0311)*abv;
+        break;
+      case "Barspoon":
+        sum += (amount*0.167)*abv;
+        break;
+      case "Piece":
+        sum += 0;
+        break;
+      case "Drop":
+        sum += (amount*0.0016907)*abv;
+        break;
+    }
   }
-}
 
-sum/field("Initial Volume (oz)")
+  sum/field("Initial Volume (oz)")
+
+}

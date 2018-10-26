@@ -1,11 +1,15 @@
-if (field("White Cap Inventory")[0] !== undefined) {
+function pos_category(){
 
-  field("White Cap Inventory")[0].field("Category");
+  if (field("White Cap Inventory")[0] !== undefined) {
 
-}
+    field("White Cap Inventory")[0].field("Category");
 
-else {
+  }
 
-  "Cocktails";
+  else {
+
+    "Cocktails";
+
+  }
 
 }

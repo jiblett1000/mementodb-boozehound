@@ -1,5 +1,7 @@
 // Calculate initial volume.
 
+function initial_volume(){
+
 var ingredients = field("Ingredients");
 var i;
 var sum = 0;
@@ -28,11 +30,17 @@ for (i = 0; i < ingredients.length; i++) {
 
 }
 
-sum
+return sum
+
+}
 
 // Calculate finished volume.
 
-var initial_volume = field("Initial Volume (oz)");
-var dilution = field("Dilution %");
+function finished_volume(){
 
-+(initial_volume * dilution) + +initial_volume;
+  var initial_volume = field("Initial Volume (oz)");
+  var dilution = field("Dilution %");
+
+  return +(initial_volume * dilution) + +initial_volume;
+
+}
