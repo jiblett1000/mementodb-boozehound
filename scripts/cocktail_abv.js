@@ -39,6 +39,6 @@ function cocktail_abv(ingredients_volume) {
 
   }
 
-  return (sum/ingredients_volume).Number();
+  return Number(sum/ingredients_volume);
 
 }
