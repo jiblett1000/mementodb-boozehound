@@ -55,5 +55,5 @@ function cocktail_glass_filled(){
     percent = ((finished_volume + (ice_amount*ice_volume))/glassware_capacity).toFixed(2)
   }
 
-  return percent.toString();
+  return percent;
 }
