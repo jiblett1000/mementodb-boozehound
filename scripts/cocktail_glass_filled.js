@@ -5,7 +5,7 @@ function cocktail_glass_filled(){
   var served = field("Served")[0].field("Name");
   var percent = "";
 
-  if (glassware === ""){
+  if (glassware.length === 0){
 
     percent = "Glassware not selected.";
 
