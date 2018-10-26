@@ -5,7 +5,7 @@ function cocktail_abv(ingredients_volume) {
 
   for (i = 0; i < ingredients.length; i++) {
 
-    if (ingredients[i].field("ABV") !== 0) {
+    if (ingredients[i].field("ABV") != null) {
 
       var unit = ingredients[i].attr("Unit");
       var abv = ingredients[i].field("ABV");
