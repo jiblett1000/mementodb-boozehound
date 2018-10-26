@@ -1,7 +1,6 @@
-function cocktail_abv(){
+function cocktail_abv(ingredients_volume) {
 
   var ingredients = field("Ingredients");
-  var i;
   var sum = 0;
 
   for (i = 0; i < ingredients.length; i++) {
@@ -29,6 +28,6 @@ function cocktail_abv(){
     }
   }
 
-  return sum/field("Initial Volume (oz)")
+  return sum/ingredients_volume)
 
 }
