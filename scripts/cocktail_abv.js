@@ -33,12 +33,12 @@ function cocktail_abv(ingredients_volume) {
 
     else {
 
-      sum += 0.00;
+      sum += 0;
 
     }
 
   }
 
-  return (sum/ingredients_volume);
+  return parseFloat(sum/ingredients_volume);
 
 }
