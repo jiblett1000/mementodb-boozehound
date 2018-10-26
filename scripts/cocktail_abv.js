@@ -1,5 +1,5 @@
 function cocktail_abv(ingredients_volume) {
-
+  parseFloat(ingredients_volume);
   var ingredients = field("Ingredients");
   var sum = 0;
 
