@@ -1,33 +1,37 @@
-var ingredients = entry().field("Ingredients");
-var text = "";
+function cocktail_readable(){
 
-var unit_plurals = {
-  oz: 'oz',
-  Barspoon: 'Barspoons',
-  Drop: 'Drops',
-  Piece: 'Pieces',
-  Dash: 'Dashes'
-};
+  var ingredients = entry().field("Ingredients");
+  var text = "";
 
-for (i = 0; i < ingredients.length; i++) {
+  var unit_plurals = {
+    oz: 'oz',
+    Barspoon: 'Barspoons',
+    Drop: 'Drops',
+    Piece: 'Pieces',
+    Dash: 'Dashes'
+  };
 
-  var amount = ingredients[i].attr("Amount");
-  var name = ingredients[i].field("Name");
+  for (i = 0; i < ingredients.length; i++) {
 
-  if (amount > 1) {
-    var unit = unit_plurals[ingredients[i].attr("Unit")];
+    var amount = ingredients[i].attr("Amount");
+    var name = ingredients[i].field("Name");
+
+    if (amount > 1) {
+      var unit = unit_plurals[ingredients[i].attr("Unit")];
+    }
+    else {
+      var unit = ingredients[i].attr("Unit");
+    }
+
+
+    if (i != ingredients.length - 1) {
+      text += amount + " " + unit + "  " + name + "\n";
+    }
+    else {
+      text += amount + " " + unit + "  " + name;
+    }
   }
-  else {
-    var unit = ingredients[i].attr("Unit");
-  }
 
+  entry().set("Ingredients_Readable", text);
 
-  if (i != ingredients.length - 1) {
-    text += amount + " " + unit + "  " + name + "\n";
-  }
-  else {
-    text += amount + " " + unit + "  " + name;
-  }
 }
-
-entry().set("Ingredients_Readable", text);
