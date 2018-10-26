@@ -5,7 +5,13 @@ function cocktail_abv(ingredients_volume) {
 
   for (i = 0; i < ingredients.length; i++) {
 
-    if (ingredients[i].field("ABV") !== "") {
+    if (ingredients[i].field("ABV") === undefined) {
+
+      sum += 0;
+
+    }
+
+    else {
 
       var unit = ingredients[i].attr("Unit");
       var abv = ingredients[i].field("ABV");
@@ -28,13 +34,7 @@ function cocktail_abv(ingredients_volume) {
           sum += (amount*0.0016907)*abv;
           break;
       }
-
-    }
-
-    else {
-
-      sum += 0;
-
+      
     }
 
   }
