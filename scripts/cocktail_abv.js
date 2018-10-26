@@ -29,6 +29,6 @@ function cocktail_abv(){
     }
   }
 
-  sum/field("Initial Volume (oz)")
+  return sum/field("Initial Volume (oz)")
 
 }
