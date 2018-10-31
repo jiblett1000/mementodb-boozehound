@@ -37,6 +37,6 @@ function cocktail_cogs() {
 
   }
 
-  sum.toFixed(2)
+  return sum.toFixed(2)
 
 }
