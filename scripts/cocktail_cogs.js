@@ -21,7 +21,7 @@ function cocktail_cogs() {
     var amount = ingredients[i].attr("Amount");
     var cost = ingredients[i].field("Cost");
 
-    sum += (amount*unit_ratio[unit])*cost;
+    sum += parseFloat((amount*unit_ratio[unit])*cost);
 
   }
 
@@ -33,7 +33,7 @@ function cocktail_cogs() {
 
     var garnish_cost = garnish[i].field("Cost");
 
-      sum += garnish_cost;
+      sum += parseFloat(garnish_cost);
 
   }
 
