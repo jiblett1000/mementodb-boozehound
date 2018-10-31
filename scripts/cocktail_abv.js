@@ -30,13 +30,13 @@ function cocktail_abv(ingredients_volume) {
       }
 
     }
-
+/*
     else {
 
       sum += 0;
 
     }
-
+*/
   }
 
   return sum/ingredients_volume;
