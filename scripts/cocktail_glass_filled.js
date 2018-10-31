@@ -1,9 +1,8 @@
-function cocktail_glass_filled(){
+function cocktail_glass_filled() {
 
   var glassware = field("Glassware");
-  var percent = "";
 
-  if (glassware.length === 0){
+  if (glassware.length == 0){
 
     percent = "Glassware not selected.";
 
@@ -46,6 +45,7 @@ function cocktail_glass_filled(){
         var ice_amount = 1;
         var ice_volume = 4.432899285;
         break;
+
       default:
         var ice_amount = 0;
         var ice_volume = 0;

@@ -1,6 +1,8 @@
-function pos_category(){
+function pos_category() {
 
-  if (field("White Cap Inventory")[0] !== undefined) {
+  var business_name = libByName(*Settings)
+  var entries = libByName('')
+  if (field("White Cap Inventory")[0]) {
 
     field("White Cap Inventory")[0].field("Category");
 

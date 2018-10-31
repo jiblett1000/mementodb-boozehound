@@ -1,6 +1,6 @@
 // Calculate initial volume.
 
-function initial_volume(){
+function initial_volume() {
 
 var ingredients = field("Ingredients");
 var sum = 0;

@@ -1,9 +1,11 @@
-function cocktail_dilution(){
+function cocktail_dilution() {
+
   var initial_abv = field("Initial ABV")/100;
   var links = field("Prep Method(s)");
   var sum = 0;
 
   for (var i = 0; i < links.length; i++) {
+
     var prep_method = links[i].field("Name");
 
     switch (prep_method) {
@@ -26,6 +28,7 @@ function cocktail_dilution(){
 
       default: 0;
     }
+
   }
 
   return sum;

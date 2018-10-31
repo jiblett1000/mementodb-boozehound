@@ -1,15 +1,19 @@
-var name = field("Manual Name");
-var inventory = field("White Cap Inventory")[0];
-var cocktail = field("White Cap Cocktail Specs")[0];
+function pos_item_name() {
 
-if (name) {
-  name;
-}
+  var name = field("Manual Name");
+  var inventory = field("White Cap Inventory")[0];
+  var cocktail = field("White Cap Cocktail Specs")[0];
 
-else if (inventory) {
-  inventory.field("Thing")[0].field("Name");
-}
+  if (name) {
+    name;
+  }
 
-else if (cocktail) {
-  cocktail.field("Name");
+  else if (inventory) {
+    inventory.field("Thing")[0].field("Name");
+  }
+
+  else if (cocktail) {
+    cocktail.field("Name");
+  }
+
 }
