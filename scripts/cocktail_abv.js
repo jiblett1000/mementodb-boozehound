@@ -9,7 +9,7 @@ function cocktail_abv(ingredients_volume) {
     if (ingredients[i].field("ABV")) {
 
       var unit = ingredients[i].attr("Unit");
-      var abv = ingredients[i].field("ABV");
+      var abv = parseFloat(ingredients[i].field("ABV"));
       var amount = ingredients[i].attr("Amount");
 
       switch (unit) {
@@ -34,6 +34,6 @@ function cocktail_abv(ingredients_volume) {
 
   }
 
-  return "test";
+  return sum/ingredients_volume;
 
 }
