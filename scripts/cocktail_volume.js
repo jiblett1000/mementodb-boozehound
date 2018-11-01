@@ -26,7 +26,7 @@ for (i = 0; i < ingredients.length; i++) {
     case "Drop":
       sum += amount*0.0016907;
     default:
-
+      sum += 0;
   }
 
 }
@@ -42,6 +42,6 @@ function finished_volume(){
   var initial_volume = field("Initial Volume (oz)");
   var dilution = field("Dilution %");
 
-  return +(initial_volume * dilution) + +initial_volume;
+  return (initial_volume * dilution) + initial_volume;
 
 }
