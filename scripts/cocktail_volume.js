@@ -3,7 +3,7 @@
 function initial_volume() {
 
 var ingredients = field("Ingredients");
-var sum = 0;
+var sum = parseFloat(0);
 
 for (i = 0; i < ingredients.length; i++) {
 
