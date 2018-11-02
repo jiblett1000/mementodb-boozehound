@@ -5,8 +5,8 @@ function initialVolume() {
   let sum = 0;
 
   for (i = 0; i < ingredients.length; i++) {
-    const unit = ingredients[i].attr("Unit");
-    const amount = ingredients[i].attr("Amount");
+    let unit = ingredients[i].attr("Unit");
+    let amount = ingredients[i].attr("Amount");
 
     switch (unit) {
       case "oz":
