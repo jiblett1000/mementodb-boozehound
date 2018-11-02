@@ -15,7 +15,7 @@ function cocktailGlassFilled() {
       case "On the Rocks":
         var iceVolume = 0.811;
 
-        switch (glassware) {
+        switch (drinkware) {
           case "Collins":
             var iceAmount = 5;
             break;
