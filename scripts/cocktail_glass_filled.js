@@ -8,8 +8,8 @@ function cocktailGlassFilled() {
   else {
     var served = field("Served")[0].field("Name");
     var finishedVolume = field("Finished Volume (oz)");
-    var drinkwareName = glassware[0].field("Name");
-    var drinkwareCapacity = glassware[0].field("Capacity (oz)");
+    var drinkwareName = drinkware[0].field("Name");
+    var drinkwareCapacity = drinkware[0].field("Capacity (oz)");
 
     switch (served) {
       case "On the Rocks":
