@@ -8,7 +8,7 @@ function cocktailAbv(ingredientsVolume) {
       const {
         attr("Unit"): unit,
         attr("Amount"): amount,
-        field("ABV")
+        field("ABV"): abv
       } = ingredients[i]
 /*
       var unit = ingredients[i].attr("Unit");
