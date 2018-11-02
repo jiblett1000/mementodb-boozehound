@@ -1,11 +1,10 @@
-function pos_item_name() {
-
-  var name = field("Manual Name");
+function posItemName() {
+  var manualName = field("Manual Name");
   var inventory = field("White Cap Inventory")[0];
   var cocktail = field("White Cap Cocktail Specs")[0];
 
-  if (name) {
-    name;
+  if (manualName) {
+    manualName;
   }
 
   else if (inventory) {
@@ -15,5 +14,4 @@ function pos_item_name() {
   else if (cocktail) {
     cocktail.field("Name");
   }
-
 }

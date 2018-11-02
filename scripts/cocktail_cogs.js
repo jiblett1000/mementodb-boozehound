@@ -1,28 +1,23 @@
-function cocktail_cogs() {
-
-  var sum = 0;
-  var unit_ratio = {
-
+function cocktailCogs() {
+  const unitRatio = {
     oz: 30,
     Dash: 0.92,
     Drop: 0.092,
     Barspoon: 4.93,
     Piece: 1
-
   }
+  let sum = 0;
 
   // Calculate cost of ingredients
 
   var ingredients = field("Ingredients");
 
   for (i = 0; i < ingredients.length; i++) {
-
     var unit = ingredients[i].attr("Unit");
     var amount = ingredients[i].attr("Amount");
     var cost = ingredients[i].field("Cost");
 
-    sum += parseFloat((amount*unit_ratio[unit])*cost);
-
+    sum += parseFloat((amount*unitRatio[unit])*cost);
   }
 
   // Add the cost of the garnish(es)
@@ -30,13 +25,9 @@ function cocktail_cogs() {
   var garnish = field("Garnish(es)");
 
   for (i = 0; i < garnish.length; i++) {
+    var garnishCost = garnish[i].field("Cost");
 
-    var garnish_cost = garnish[i].field("Cost");
-
-      sum += parseFloat(garnish_cost);
-
+    sum += parseFloat(garnishCost);
   }
-
   return sum.toFixed(2)
-
 }

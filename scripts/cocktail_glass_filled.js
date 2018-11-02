@@ -1,59 +1,50 @@
-function cocktail_glass_filled() {
+function cocktailGlassFilled() {
+  var drinkware = field("Drinkware");
 
-  var glassware = field("Glassware");
-
-  if (glassware.length === 0){
-
+  if (drinkware.length === 0){
     percent = "Glassware not selected.";
-
   }
 
   else {
-
     var served = field("Served")[0].field("Name");
-    var finished_volume = +field("Finished Volume (oz)");
-    var glassware_name = glassware[0].field("Name");
-    var glassware_capacity = glassware[0].field("Capacity (oz)");
+    var finishedVolume = field("Finished Volume (oz)");
+    var drinkwareName = glassware[0].field("Name");
+    var drinkwareCapacity = glassware[0].field("Capacity (oz)");
 
     switch (served) {
       case "On the Rocks":
-        var ice_volume = 0.811;
+        var iceVolume = 0.811;
+
         switch (glassware) {
           case "Collins":
-            var ice_amount = 5;
+            var iceAmount = 5;
             break;
           case "Double Rocks":
-            var ice_amount = 9;
+            var iceAmount = 9;
             break;
           default:
-           var ice_amount = 5;
+           var iceAmount = 5;
          break;
         };
         break;
-
       case "On Collins Cube":
-        var ice_amount = 1;
-        var ice_volume = 4;
+        var iceAmount = 1;
+        var iceVolume = 4;
         break;
-
       case "Over Crushed":
-        var ice_amount = 1;
-        var ice_volume = glassware_capacity - finished_volume;
+        var iceAmount = 1;
+        var iceVolume = drinkwareCapacity - finishedVolume;
         break;
-
       case "On a Big Rock":
-        var ice_amount = 1;
-        var ice_volume = 4.432899285;
+        var iceAmount = 1;
+        var iceVolume = 4.432899285;
         break;
-
       default:
-        var ice_amount = 0;
-        var ice_volume = 0;
+        var iceAmount = 0;
+        var iceVolume = 0;
         break;
     }
-
-    percent = ((finished_volume + (ice_amount*ice_volume))/glassware_capacity).toFixed(2)
+    percent = ((finishedVolume + (iceAmount*iceVolume))/drinkwareCapacity).toFixed(2)
   }
-
   return percent;
 }
