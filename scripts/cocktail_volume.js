@@ -4,7 +4,7 @@ function initialVolume() {
   var ingredients = field("Ingredients");
   var sum = 0;
 
-  for (i = 0; i < ingredients.length; i++) {
+  for (var i = 0; i < ingredients.length; i++) {
     let unit = ingredients[i].attr("Unit");
     let amount = ingredients[i].attr("Amount");
 
