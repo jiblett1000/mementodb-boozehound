@@ -6,9 +6,9 @@ function cocktailAbv(ingredientsVolume) {
 
     if (ingredients[i].field("ABV")) {
       const {
-        attr("Unit"): unit,
-        attr("Amount"): amount,
-        field("ABV"): abv
+        .attr("Unit"): unit,
+        .attr("Amount"): amount,
+        .field("ABV"): abv
       } = ingredients[i]
 /*
       var unit = ingredients[i].attr("Unit");
