@@ -27,7 +27,7 @@ function initialVolume() {
         sum += 0;
     }
   }
-  return typeof sum;
+  return parseFloat(sum);
 }
 
 // Calculate finished volume.
