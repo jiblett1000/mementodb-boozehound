@@ -26,10 +26,12 @@ function cocktailAbv(ingredientsVolume) {
           sum += (amount*0.0016907)*abv;
           break;
       }
-    } else {
+    }
+
+    else {
       sum += 0;
     }
   }
 
-  return typeof(ingredientsVolume);
+  return typeof ingredientsVolume;
 }
