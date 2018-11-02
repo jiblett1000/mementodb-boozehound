@@ -32,5 +32,5 @@ function cocktailAbv(ingredientsVolume) {
     }
   }
 
-  return sum/ingredientsVolume;
+  return typeof sum;
 }
