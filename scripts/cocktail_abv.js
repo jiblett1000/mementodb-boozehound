@@ -1,6 +1,6 @@
 function cocktailAbv(ingredientsVolume) {
-  let ingredients = field("Ingredients");
-  let sum = 0;
+  var ingredients = field("Ingredients");
+  var sum = 0;
 
   for (i = 0; i < ingredients.length; i++) {
 
