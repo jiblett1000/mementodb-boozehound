@@ -27,7 +27,7 @@ function initialVolume() {
         sum += 0;
     }
   }
-  return typeof ingredients[i].attr("Amount");
+  return typeof ingredients[1].attr("Amount");
 }
 
 // Calculate finished volume.
