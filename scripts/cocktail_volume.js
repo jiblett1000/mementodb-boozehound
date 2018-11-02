@@ -1,12 +1,12 @@
 // Calculate initial volume.
 
 function initialVolume() {
-  var ingredients = field("Ingredients");
-  var sum = 0;
+  let ingredients = field("Ingredients");
+  let sum = 0;
 
   for (i = 0; i < ingredients.length; i++) {
-    var unit = ingredients[i].attr("Unit");
-    var amount = ingredients[i].attr("Amount");
+    const unit = ingredients[i].attr("Unit");
+    const amount = ingredients[i].attr("Amount");
 
     switch (unit) {
       case "oz":
@@ -27,7 +27,7 @@ function initialVolume() {
         sum += 0;
     }
   }
-  return parseFloat(sum);
+  return typeof sum;
 }
 
 // Calculate finished volume.
