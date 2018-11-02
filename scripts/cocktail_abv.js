@@ -1,17 +1,20 @@
-function cocktail_abv(ingredients_volume) {
-
-  parseFloat(ingredients_volume);
+function cocktailAbv(ingredientsVolume) {
   var ingredients = field("Ingredients");
   var sum = 0;
 
   for (i = 0; i < ingredients.length; i++) {
 
     if (ingredients[i].field("ABV")) {
-
+      const {
+        attr("Unit"): unit,
+        attr("Amount"): amount,
+        field("ABV")
+      } = ingredients[i]
+/*
       var unit = ingredients[i].attr("Unit");
-      var abv = parseFloat(ingredients[i].field("ABV"));
       var amount = ingredients[i].attr("Amount");
-
+      var abv = ingredients[i].field("ABV");
+*/
       switch (unit) {
         case "oz":
           sum += amount*abv;
@@ -29,11 +32,12 @@ function cocktail_abv(ingredients_volume) {
           sum += (amount*0.0016907)*abv;
           break;
       }
-
+    } else {
+      sum += 0;
     }
 
   }
 
-  return sum/ingredients_volume;
+  return sum/ingredientsVolume;
 
 }
