@@ -4,10 +4,10 @@ function posItemName() {
   const cocktail = field('White Cap Cocktail Specs')[0];
 
   if (manualName) {
-    manualName;
+    return manualName;
   } else if (inventory) {
-    inventory.field('Thing')[0].field('Name');
+    return inventory.field('Thing')[0].field('Name');
   } else if (cocktail) {
-    cocktail.field('Name');
+    return cocktail.field('Name');
   }
 }
