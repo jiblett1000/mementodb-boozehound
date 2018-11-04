@@ -1,0 +1,28 @@
+{
+  "name": "mementodb-boozehound",
+  "version": "1.0.0",
+  "description": "Bar management database for use in MementoDB",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^6.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiblett1000/mementodb-boozehound.git"
+  },
+  "author": "Christian Burkhart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiblett1000/mementodb-boozehound/issues"
+  },
+  "homepage": "https://github.com/jiblett1000/mementodb-boozehound#readme"
+}
