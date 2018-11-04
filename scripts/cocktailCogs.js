@@ -12,19 +12,19 @@ function cocktailCogs() {
   // Calculate cost of ingredients
 
   for (let i of ingredients) {
-    const unit = ingredients[i].attr("Unit");
-    const amount = ingredients[i].attr("Amount");
-    const cost = ingredients[i].field("Cost");
+    const unit = ingredients[i].attr('Unit');
+    const amount = ingredients[i].attr('Amount');
+    const cost = ingredients[i].field('Cost');
 
     sum += (amount * unitRatio[unit]) * cost;
   }
 
   // Add the cost of the garnish(es)
 
-  const garnish = field("Garnish(es)");
+  const garnish = field('Garnish(es)');
 
   for (let i of garnish) {
-    const garnishCost = garnish[i].field("Cost");
+    const garnishCost = garnish[i].field('Cost');
 
     sum += garnishCost;
   }
