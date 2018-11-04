@@ -4,7 +4,7 @@ function cocktailInitialVolume() {
   const ingredients = field('Ingredients');
   let sum = 0;
 
-  for (let i = 0; i < ingredients.length; i++) {
+  for (let i of ingredient) {
     const unit = ingredients[i].attr('Unit');
     const amount = ingredients[i].attr('Amount');
     const unitRatio = {
