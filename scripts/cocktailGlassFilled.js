@@ -1,19 +1,22 @@
 function cocktailGlassFilled() {
-  var drinkware = field('Drinkware');
+  const drinkware = field('Drinkware');
 
-  if (drinkware.length === 0){
+  if (drinkware){
     percent = 'Glassware not selected.';
   }
 
   else {
-    var served = field('Served')[0].field('Name');
-    var finishedVolume = field('Finished Volume (oz)');
-    var drinkwareName = drinkware[0].field('Name');
-    var drinkwareCapacity = drinkware[0].field('Capacity (oz)');
+    const served = field('Served')[0].field('Name');
+    const finishedVolume = field('Finished Volume (oz)');
+    const drinkwareName = drinkware[0].field('Name');
+    const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
+
+
+    let iceAmount = drinkwareCapacity / iceVolume
 
     switch (served) {
       case 'On the Rocks':
-        var iceVolume = 0.811;
+        let iceVolume = 0.811;
 
         switch (drinkware) {
           case 'Collins':
