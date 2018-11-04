@@ -2,18 +2,18 @@
 
 function cocktailInitialVolume() {
   const ingredients = field('Ingredients');
+  const unitRatio = {
+    oz: 1,
+    Dash: 0.0311,
+    Barspoon: 0.167,
+    Drop: 0.0016907,
+    Piece: 0,
+  };
   let sum = 0;
 
   for (let i of ingredient) {
     const unit = ingredients[i].attr('Unit');
     const amount = ingredients[i].attr('Amount');
-    const unitRatio = {
-      oz: 1,
-      Dash: 0.0311,
-      Barspoon: 0.167,
-      Drop: 0.0016907,
-      Piece: 0,
-    };
 
     sum += unitRatio[unit] * amount;
   }
