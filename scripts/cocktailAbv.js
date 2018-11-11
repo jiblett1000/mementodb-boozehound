@@ -14,27 +14,6 @@ function cocktailAbv(ingredientsVolume) {
       const amount = ingredient.attr('Amount');
 
       return sum + ((amount * unitRatio[unit]) * abv);
-
-      /*
-      switch (unit) {
-        case 'oz':
-          sum + (amount * abv);
-          break;
-        case 'Dash':
-          sum + ((amount * 0.0311) * abv);
-          break;
-        case 'Barspoon':
-          sum + ((amount * 0.167) * abv);
-          break;
-        case 'Piece':
-          sum + 0;
-          break;
-        case 'Drop':
-          sum + ((amount * 0.0016907) * abv);
-          break;
-        default:
-      }
-    */
     }
     return sum + 0;
   }, 0);
