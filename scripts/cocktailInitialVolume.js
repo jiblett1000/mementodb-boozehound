@@ -1,7 +1,8 @@
 // Calculate initial volume.
 
 function cocktailInitialVolume() {
-  const ingredients = entry().field('Ingredients');
+  const e = entry();
+  const ingredients = e.field('Ingredients');
   const unitRatio = {
     oz: 1,
     Dash: 0.0311,
@@ -19,5 +20,5 @@ function cocktailInitialVolume() {
     return sum;
   });
 
-  set(entry().field('Initial Volume (oz)'), sum);
+  e.set(e.field('Initial Volume (oz)'), sum);
 }
