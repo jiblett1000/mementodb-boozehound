@@ -29,7 +29,8 @@ function cocktailAbv(ingredientsVolume) {
     } else {
       sum + 0;
     }
+    return sum
   }, 0);
 
-  return sum / ingredientsVolume;
+  return abvTotal / ingredientsVolume;
 }
