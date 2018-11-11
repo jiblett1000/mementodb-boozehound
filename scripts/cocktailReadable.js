@@ -17,16 +17,18 @@ function cocktailReadable() {
     // Check if singular or plural
 
     if (amount > 1) {
-      let unit = unitPlurals[ingredient.attr('Unit')];
+      const unit = unitPlurals[ingredient.attr('Unit')];
+    } else {
+      const unit = ingredient.attr('Unit');
     }
-    let unit = ingredient.attr('Unit');
 
     // Check if last ingredient
 
-    if (ingredient === ingredients.length - 1) {
-      return text + (amount + ' ' + unit + '  ' + name);
-    }
-      return text + (amount + ' ' + unit + '  ' + name + '\n');
+//    if (ingredient === ingredients.length - 1) {
+    return text + (amount + ' ' + unit + '  ' + name);
+//    }
+//      return text + (amount + ' ' + unit + '  ' + name + '\n');
   }, 0);
+
   e.set('Ingredients_Readable', specs);
 }
