@@ -1,5 +1,6 @@
 function cocktailReadable() {
-  const ingredients = entry().field('Ingredients');
+  const e = entry();
+  const ingredients = e.field('Ingredients');
   const unitPlurals = {
     oz: 'oz',
     Barspoon: 'Barspoons',
@@ -7,25 +8,25 @@ function cocktailReadable() {
     Piece: 'Pieces',
     Dash: 'Dashes',
   };
-  let text = '';
+  // Add each ingredient to the specs list
 
-  for (i = 0; i < ingredients.length; i++) {
-    const amount = ingredients[i].attr('Amount');
-    const name = ingredients[i].field('Name');
+  const specs = ingredients.reduce((text, ingredient) => {
+    const amount = ingredient.attr('Amount');
+    const name = ingredient.field('Name');
 
     // Check if singular or plural
 
     if (amount > 1) {
-      const unit = unitPlurals[ingredients[i].attr('Unit')];
+      const unit = unitPlurals[ingredient.attr('Unit')];
     }
-      const unit = ingredients[i].attr('Unit');
-    }
+    const unit = ingredient.attr('Unit');
 
     // Check if last ingredient
 
-    if (i === ingredients.length - 1) {
-      text += amount + ' ' + unit + '  ' + name;
+    if (ingredient === ingredients.length - 1) {
+      return `${text}${amount} ${unit} ${name}`;
     }
-      text += amount + ' ' + unit + '  ' + name + '\n';
-  entry().set('Ingredients_Readable', text);
+    return `${text} ${amount} ${unit} ${name} '\n'`;
+  }, 0);
+  e.set('Ingredients_Readable', specs);
 }
