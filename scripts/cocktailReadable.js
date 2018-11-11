@@ -20,11 +20,9 @@ function cocktailReadable() {
     if (amount > 1) { unit = unitPlurals[unit]; }
 
     // Check if last ingredient
+    const line = text + (amount + ' ' + unit + '  ' + name)
 
-    if (index !== ingredients.length - 1) {
-      return text + (amount + ' ' + unit + '  ' + name + '\n');
-    }
-    return text + (amount + ' ' + unit + '  ' + name);
+    return index !== ingredients.length - 1 ? line : line + '\n';
   }, '');
 
   e.set('Ingredients_Readable', specs);
