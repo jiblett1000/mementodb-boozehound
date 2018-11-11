@@ -1,6 +1,12 @@
 function cocktailAbv(ingredientsVolume) {
   const ingredients = field('Ingredients');
-
+  const unitRatio = {
+    oz: 1,
+    Dash: 0.0311,
+    Barspoon: 0.167,
+    Drop: 0.0016907,
+    Piece: 0,
+  };
   const abvTotal = ingredients.reduce((sum, ingredient) => {
 
     if (ingredient.field('ABV')) {
@@ -8,11 +14,14 @@ function cocktailAbv(ingredientsVolume) {
       const abv = ingredient.field('ABV');
       const amount = ingredient.attr('Amount');
 
+      sum + ((amount * unitRatio[unit]) * abv);
+
+/*
       switch (unit) {
         case 'oz':
           sum + (amount * abv);
           break;
-        case 'Dash':(let i of ingredients)
+        case 'Dash':
           sum + ((amount * 0.0311) * abv);
           break;
         case 'Barspoon':
@@ -26,8 +35,9 @@ function cocktailAbv(ingredientsVolume) {
           break;
         default:
       }
+    */
     } else {
-      sum + 0;
+      sum += 0;
     }
     return sum
   }, 0);
