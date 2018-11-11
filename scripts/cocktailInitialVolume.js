@@ -19,5 +19,5 @@ function cocktailInitialVolume() {
     return sum;
   });
 
-  entry().set(field('Initial Volume (oz)'), sum);
+  set(entry().field('Initial Volume (oz)'), sum);
 }
