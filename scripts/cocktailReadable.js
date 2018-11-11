@@ -21,10 +21,10 @@ function cocktailReadable() {
 
     // Check if last ingredient
 
-//    if (ingredient === ingredients.length - 1) {
-    return text + (amount + ' ' + unit + '  ' + name);
-//    }
-//      return text + (amount + ' ' + unit + '  ' + name + '\n');
+    if (ingredient === ingredients.length - 1) {
+      return text + (amount + ' ' + unit + '  ' + name);
+    }
+    return text + (amount + ' ' + unit + '  ' + name + '\n');
   }, '');
 
   e.set('Ingredients_Readable', specs);
