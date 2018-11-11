@@ -10,8 +10,6 @@ function cocktailInitialVolume() {
     Drop: 0.0016907,
     Piece: 0,
   };
-
-
   const volume = ingredients.reduce((sum, entry) => {
     const unit = entry.attr('Unit');
     const amount = entry.attr('Amount');
@@ -19,17 +17,5 @@ function cocktailInitialVolume() {
     return sum + (unitRatio[unit] * amount);
   }, 0);
 
-/*
-  let sum = 0;
-
-  ingredients.map((entry) => {
-    const unit = entry.attr('Unit');
-    const amount = entry.attr('Amount');
-
-    sum += unitRatio[unit] * amount;
-    return sum;
-  });
-*/
-
-e.set(e.field('Initial Volume (oz)'), volume);
+  e.set('Initial Volume new', volume);
 }
