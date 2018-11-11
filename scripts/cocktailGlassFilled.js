@@ -15,7 +15,7 @@ function cocktailGlassFilled() {
     'On a Big Rock': 4.432899285,
   };
 
-  const iceAmount = Math.floor(drinkwareCapacity / iceVolume['served']);
+  const iceAmount = Math.floor(drinkwareCapacity / iceVolume[served]);
   /*
     switch (served) {
       case 'On the Rocks':
