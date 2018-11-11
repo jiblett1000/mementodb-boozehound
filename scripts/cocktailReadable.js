@@ -17,18 +17,15 @@ function cocktailReadable() {
 
     if (amount > 1) {
       const unit = unitPlurals[ingredients[i].attr('Unit')];
-    } else {
+    }
       const unit = ingredients[i].attr('Unit');
     }
 
     // Check if last ingredient
 
-    if (i !== ingredients.length - 1) {
-      text += amount + ' ' + unit + '  ' + name + "\n";
-    }
-    else {
+    if (i === ingredients.length - 1) {
       text += amount + ' ' + unit + '  ' + name;
     }
-  }
+      text += amount + ' ' + unit + '  ' + name + '\n';
   entry().set('Ingredients_Readable', text);
 }
