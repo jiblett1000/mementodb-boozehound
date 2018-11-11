@@ -1,22 +1,22 @@
 function cocktailGlassFilled() {
   const drinkware = field('Drinkware');
 
-  if (drinkware){
-    percent = 'Glassware not selected.';
+  if (!drinkware) {
+    return 'Glassware not selected.';
   }
 
-  else {
-    const served = field('Served')[0].field('Name');
-    const finishedVolume = field('Finished Volume (oz)');
-    const drinkwareName = drinkware[0].field('Name');
-    const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
+  const served = field('Served')[0].field('Name');
+  const finishedVolume = field('Finished Volume (oz)');
+  const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
+  const iceVolume = {
+    'On the Rocks': 0.0811,
+    'On Collins Cube': 4,
+    'On Crushed': drinkwareCapacity - finishedVolume,
+    'On a Big Rock': 4.432899285,
+  };
 
-    const iceAmounts = {
-      'On the Rocks': ,
-    };
-
-    let iceAmount = drinkwareCapacity / iceVolume
-
+  const iceAmount = Math.floor(drinkwareCapacity / iceVolume[served]);
+  /*
     switch (served) {
       case 'On the Rocks':
         let iceVolume = 0.811;
@@ -35,9 +35,9 @@ function cocktailGlassFilled() {
         break;
       case 'On Collins Cube':
         var iceAmount = 1;
-        var iceVolume = 4;
+        let iceVolume = 4;
         break;
-      case 'Over Crushed':
+      case 'On Crushed':
         var iceAmount = 1;
         var iceVolume = drinkwareCapacity - finishedVolume;
         break;
@@ -50,7 +50,6 @@ function cocktailGlassFilled() {
         var iceVolume = 0;
         break;
     }
-    percent = ((finishedVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2)
-  }
-  return percent;
+    */
+  return ((finishedVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
 }
