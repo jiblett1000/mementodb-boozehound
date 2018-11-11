@@ -17,9 +17,9 @@ function cocktailReadable() {
     // Check if singular or plural
 
     if (amount > 1) {
-      const unit = unitPlurals[ingredient.attr('Unit')];
+      let unit = unitPlurals[ingredient.attr('Unit')];
     } else {
-      const unit = ingredient.attr('Unit');
+      let unit = ingredient.attr('Unit');
     }
 
     // Check if last ingredient
