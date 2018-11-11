@@ -13,14 +13,11 @@ function cocktailReadable() {
   const specs = ingredients.reduce((text, ingredient) => {
     const amount = ingredient.attr('Amount');
     const name = ingredient.field('Name');
+    let unit = ingredient.attr('Unit');
 
     // Check if singular or plural
 
-    if (amount > 1) {
-      let unit = unitPlurals[ingredient.attr('Unit')];
-    } else {
-      let unit = ingredient.attr('Unit');
-    }
+    if (amount > 1) { unit = unitPlurals[unit]; }
 
     // Check if last ingredient
 
@@ -28,7 +25,7 @@ function cocktailReadable() {
     return text + (amount + ' ' + unit + '  ' + name);
 //    }
 //      return text + (amount + ' ' + unit + '  ' + name + '\n');
-  }, 0);
+  }, '');
 
   e.set('Ingredients_Readable', specs);
 }
