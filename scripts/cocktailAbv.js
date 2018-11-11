@@ -2,6 +2,8 @@ function cocktailAbv(ingredientsVolume) {
   const ingredients = field("Ingredients");
   let sum = 0;
 
+  // for...of loops not working yet.
+
   for (let i of ingredients) {
 
     if (ingredients[i].field('ABV')) {

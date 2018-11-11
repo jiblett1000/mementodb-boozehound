@@ -11,6 +11,9 @@ function cocktailGlassFilled() {
     const drinkwareName = drinkware[0].field('Name');
     const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
 
+    const iceAmounts = {
+      'On the Rocks': ,
+    };
 
     let iceAmount = drinkwareCapacity / iceVolume
 
