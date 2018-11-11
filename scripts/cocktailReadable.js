@@ -8,16 +8,17 @@ function cocktailReadable() {
     Piece: 'Pieces',
     Dash: 'Dashes',
   };
-  // Add each ingredient to the specs list
 
+  // Add each ingredient to the specs list
   const specs = ingredients.reduce((text, ingredient, index) => {
     const amount = ingredient.attr('Amount');
     const name = ingredient.field('Name');
-    let unit = ingredient.attr('Unit');
+    const unitRaw = ingredient.attr('Unit');
 
     // Check if singular or plural
+    const unit = (amount <= 1) ? unitRaw : unitPlurals[unitRaw];
 
-    if (amount > 1) { unit = unitPlurals[unit]; }
+  //  if (amount > 1) { unit = unitPlurals[unit]; }
 
     // Check if last ingredient
     const line = text + (amount + ' ' + unit + '  ' + name)
