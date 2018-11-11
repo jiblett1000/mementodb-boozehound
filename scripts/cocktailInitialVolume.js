@@ -30,5 +30,7 @@ function cocktailInitialVolume() {
     return sum;
   });
 */
-  e.set(e.field('Initial Volume (oz)'), volume);
+
+message(volume);
+//  e.set(e.field('Initial Volume (oz)'), volume);
 }
