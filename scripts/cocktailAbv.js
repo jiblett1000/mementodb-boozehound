@@ -18,5 +18,5 @@ function cocktailAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  return (abvTotal / ingredientsVolume).toFixed();
+  return (abvTotal / ingredientsVolume).toFixed(2);
 }
