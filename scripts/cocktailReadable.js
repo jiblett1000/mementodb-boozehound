@@ -21,7 +21,7 @@ function cocktailReadable() {
     // Check if last ingredient
     const line = text + (amount + ' ' + unit + '  ' + name);
 
-    return (index <= ingredients.length - 1) ? line + '\n' : line;
+    return (index < ingredients.length - 1) ? line + '\n' : line;
   }, '');
 
   e.set('Ingredients_Readable', specs);
