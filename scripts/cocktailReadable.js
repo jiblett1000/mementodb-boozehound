@@ -24,9 +24,9 @@ function cocktailReadable() {
     // Check if last ingredient
 
     if (ingredient === ingredients.length - 1) {
-      return `${text}${amount} ${unit} ${name}`;
+      return text + (amount + ' ' + unit + '  ' + name);
     }
-    return `${text}${amount} ${unit} ${name} '\n'`;
+      return text + (amount + ' ' + unit + '  ' + name + '\n');
   }, 0);
   e.set('Ingredients_Readable', specs);
 }
