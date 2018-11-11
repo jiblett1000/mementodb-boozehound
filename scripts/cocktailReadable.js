@@ -10,7 +10,7 @@ function cocktailReadable() {
   };
   // Add each ingredient to the specs list
 
-  const specs = ingredients.reduce((text, ingredient) => {
+  const specs = ingredients.reduce((text, ingredient, index) => {
     const amount = ingredient.attr('Amount');
     const name = ingredient.field('Name');
     let unit = ingredient.attr('Unit');
@@ -21,10 +21,10 @@ function cocktailReadable() {
 
     // Check if last ingredient
 
-    if (ingredient === ingredients.length - 1) {
-      return text + (amount + ' ' + unit + '  ' + name);
+    if (index !== ingredients.length - 1) {
+      return text + (amount + ' ' + unit + '  ' + name + '\n');
     }
-    return text + (amount + ' ' + unit + '  ' + name + '\n');
+    return text + (amount + ' ' + unit + '  ' + name);
   }, '');
 
   e.set('Ingredients_Readable', specs);
