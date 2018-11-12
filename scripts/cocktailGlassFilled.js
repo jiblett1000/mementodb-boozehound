@@ -13,6 +13,9 @@ function cocktailGlassFilled() {
     'On Collins Cube': 4,
     'On Crushed': drinkwareCapacity - finishedVolume,
     'On a Big Rock': 4.432899285,
+    'Neat': 0,
+    'Slushy': 0,
+    'Up': 0,
   };
   const iceVolume = iceVolumes[served];
   const iceAmount = Math.floor(drinkwareCapacity / iceVolume);
