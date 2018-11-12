@@ -23,5 +23,3 @@ function cocktailDilution(initialAbvPercent, prepMethods) {
 
   return prepTotal;
 }
-
-cocktailDilution(field('Initial ABV'), field('Prep Method(s)'));
