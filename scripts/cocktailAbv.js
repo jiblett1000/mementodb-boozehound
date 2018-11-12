@@ -1,5 +1,6 @@
 function cocktailAbv(ingredientsVolume) {
-  const ingredients = field('Ingredients');
+  const e = entry();
+  const ingredients = e.field('Ingredients');
   const unitRatio = {
     oz: 1,
     Dash: 0.0311,
@@ -18,5 +19,5 @@ function cocktailAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  return (abvTotal / ingredientsVolume).toFixed(2);
+  e.set(field('Initial ABV'), (abvTotal / ingredientsVolume).toFixed(2));
 }
