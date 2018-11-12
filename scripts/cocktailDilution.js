@@ -1,6 +1,5 @@
-function cocktailDilution() {
-  const initialAbv = field('Initial ABV') / 100;
-  const prepMethods = field('Prep Method(s)');
+function cocktailDilution(initialAbvPercent, prepMethods) {
+  const initialAbv = initialAbvPercent / 100;
   const formulas = {
     stir() { return -1.21 * (initialAbv ** 2) + 1.246 * initialAbv + 0.145; },
     shake() { return -1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203; },
@@ -23,3 +22,5 @@ function cocktailDilution() {
 
   return prepTotal;
 }
+
+cocktailDilution(field('Initial ABV'), field('Prep Method(s)'));
