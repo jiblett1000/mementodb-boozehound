@@ -16,40 +16,6 @@ function cocktailGlassFilled() {
   };
 
   const iceAmount = Math.floor(drinkwareCapacity / iceVolume[served]);
-  /*
-    switch (served) {
-      case 'On the Rocks':
-        let iceVolume = 0.811;
 
-        switch (drinkware) {
-          case 'Collins':
-            var iceAmount = 5;
-            break;
-          case 'Double Rocks':
-            var iceAmount = 9;
-            break;
-          default:
-           var iceAmount = 5;
-         break;
-        };
-        break;
-      case 'On Collins Cube':
-        var iceAmount = 1;
-        let iceVolume = 4;
-        break;
-      case 'On Crushed':
-        var iceAmount = 1;
-        var iceVolume = drinkwareCapacity - finishedVolume;
-        break;
-      case 'On a Big Rock':
-        var iceAmount = 1;
-        var iceVolume = 4.432899285;
-        break;
-      default:
-        var iceAmount = 0;
-        var iceVolume = 0;
-        break;
-    }
-    */
   return ((finishedVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
 }
