@@ -17,5 +17,5 @@ function cocktailInitialVolume() {
     return sum + (unitRatio[unit] * amount);
   }, 0);
 
-  e.set('Initial Volume new', volume);
+  e.set('Initial Volume (oz)', volume);
 }
