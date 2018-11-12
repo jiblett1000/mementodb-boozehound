@@ -1,24 +1,15 @@
 function cocktailDilution() {
-  const initialAbv = field('Initial ABV') / 100;
-  const dilutionStir = -1.21 * (initialAbv ** 2) + 1.246 * initialAbv + 0.145;
-  const dilutionShake = -1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203;
+  const initialAbv = field('Initial ABV') ? field('Initial ABV') / 100 : 0;
   const prepMethods = field('Prep Method(s)');
+  const formula {
+    'Stir': -1.21 * (initialAbv ** 2) + 1.246 * initialAbv + 0.145,
+    'Shake': -1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203,
+    'Short Shake': (-1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203) * 0.75,
+  }
 
-  const linkTotal = prepMethods.reduce((sum, meth) => {
-    const prepMethod = meth.field('Name');
+  const prepTotal = prepMethods.reduce((sum, meth) => {
 
-    switch (prepMethod) {
-      case 'Shake':
-      case 'Dry Shake, Shake':
-        return sum + dilutionShake;
-      case 'Short Shake':
-        return sum + dilutionShake * 0.75;
-      case 'Stir':
-      case 'Stir on Big Rock':
-        return sum + dilutionStir;
-      default:
-        return sum + 0;
-    }
+    return sum + formula[meth.field('Name')];
   }, 0);
-  return linkTotal;
+  return prepTotal;
 }
