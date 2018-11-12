@@ -17,5 +17,5 @@ function cocktailGlassFilled() {
 
   const iceAmount = Math.floor(drinkwareCapacity / iceVolume[served]);
 
-  return ((finishedVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
+  return ((finishedVolume + (iceAmount * iceVolume[served])) / drinkwareCapacity).toFixed(2);
 }
