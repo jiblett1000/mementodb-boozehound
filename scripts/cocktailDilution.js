@@ -1,10 +1,13 @@
 function cocktailDilution(initialAbvPercent, prepMethods) {
   const initialAbv = initialAbvPercent / 100;
   const formulas = {
-    stir() { return -1.21 * (initialAbv ** 2) + 1.246 * initialAbv + 0.145; },
-    shake() { return -1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203; },
-    shortShake() { return this.shake() * 0.75; },
+    stir: function () {
+      return -1.21 * (initialAbv ** 2) + 1.246 * initialAbv + 0.145;
+    },
+    shake: function () { return -1.567 * (initialAbv ** 2) + 1.742 * initialAbv + 0.203; },
+    shortShake: function () { return this.shake() * 0.75; },
   };
+
   const dilution = {
     Stir: formulas.stir(),
     'Stir on Big Rock': formulas.stir(),
