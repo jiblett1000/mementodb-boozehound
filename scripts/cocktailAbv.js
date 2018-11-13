@@ -7,7 +7,7 @@ function cocktailAbv(ingredientsVolume) {
     Drop: 0.0016907,
     Piece: 0,
   };
-  const abvTotal = ingredients.reduce((sum, ingredient) => {
+  const ingredientsAbv = ingredients.reduce((sum, ingredient) => {
     if (ingredient.field('ABV')) {
       const unit = ingredient.attr('Unit');
       const abv = ingredient.field('ABV');
@@ -18,5 +18,13 @@ function cocktailAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  entry().set('Initial ABV'), (abvTotal / ingredientsVolume).toFixed(2));
+  return (ingredientsAbv / ingredientsVolume).toFixed(2));
+}
+
+function cocktailInitialAbv(initialVolume) {
+  entry().set('Initial ABV', cocktailAbv(initialVolume));
+}
+
+function cocktailFinalAbv(finalVolume) {
+  entry().set('Final ABV', cocktailAbv(finalVolume);
 }
