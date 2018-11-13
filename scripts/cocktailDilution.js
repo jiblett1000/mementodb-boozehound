@@ -20,5 +20,8 @@ function cocktailDilution(initialAbvPercent, prepMethods) {
     'Fine Strain': 0,
     Swizzle: 0,
   };
-  entry().set('Dilution %', prepMethods.reduce((sum, meth) => sum + dilution[meth.field('Name')].toFixed(2), 0));
+  entry().set('Dilution %', (prepMethods.reduce((sum, meth) => {
+    return sum + dilution[meth.field('Name')], 0)).toFixed(2);
+});
+
 }
