@@ -26,6 +26,5 @@ function cocktailInitialAbv(initialVolume) {
 }
 
 function cocktailFinalAbv(finalVolume) {
-  const
   entry().set('Final ABV', cocktailAbv(finalVolume));
 }
