@@ -7,7 +7,6 @@ function posItemName() {
     return manualName;
   } else if (inventory) {
     return inventory.field('Thing')[0].field('Name');
-  } else if (cocktail) {
-    return cocktail.field('Name');
   }
+  return cocktail.field('Name');
 }

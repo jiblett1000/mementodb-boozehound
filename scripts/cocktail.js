@@ -1,11 +1,14 @@
-const settings = {
+const userSettings = {
   businessName: this.businessName,
-  volumeUnits: libByName(this.businessName + " " + 'Settings'),
+  volumeUnits: libByName(this.businessName + " " + 'Settings').entry().field(''),
 }
 
 const cocktail = {
   name: entry().field('Name'),
   ingredients: entry().field('Ingredients'),
+  ingredient: {
+    amount: this.
+  }
   initialVolume: entry().field('Initial Volume (oz)'),
   initialAbv: entry().field('Initial ABV'),
   dilutionPercent: entry().field('Dilution %'),
