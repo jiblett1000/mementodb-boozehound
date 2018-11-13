@@ -17,5 +17,5 @@ function cocktailDilution(initialAbvPercent, prepMethods) {
 
   const dilutionPercent = prepMethods.reduce((sum, meth) => sum + dilution[meth.field('Name')](), 0);
 
-  entry().set('Dilution %', (dilutionPercent * 100).toFixed(2);
+  entry().set('Dilution %', (dilutionPercent * 100).toFixed(2));
 }
