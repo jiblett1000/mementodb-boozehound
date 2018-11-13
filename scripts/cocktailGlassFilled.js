@@ -5,8 +5,8 @@ function cocktailGlassFilled() {
   if (!drinkware) {
     return 'Glassware not selected.';
   }
-
-  const served = e.field('Served')[0].field('Name');
+  const servedArr = e.field('Served')[0];
+  const served = servedArr.field('Name');
   const finalVolume = e.field('Final Volume (oz)');
   const drinkwareCapacity = drinkware.field('Capacity (oz)');
   const iceVolumes = {
