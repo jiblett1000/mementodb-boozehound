@@ -1,9 +1,7 @@
 function cocktailGlassFilled() {
   const drinkware = field('Drinkware');
 
-  if (drinkware.length === 0) {
-    return 'Glassware not selected.';
-  }
+  if (drinkware) {
     const served = field('Served')[0].field('Name');
     const finalVolume = field('Final Volume (oz)');
     const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
@@ -21,5 +19,7 @@ function cocktailGlassFilled() {
     const percent = ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
 
     return percent;
+  }
 
+  return 'Glassware not selected.';
 }
