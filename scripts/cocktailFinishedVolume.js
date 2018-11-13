@@ -1,8 +1,8 @@
-// Calculate finished volume.
+// Calculate final volume.
 
-function cocktailFinishedVolume() {
+function cocktailFinalVolume() {
   const initialVolume = entry().field('Initial Volume (oz)');
   const dilution = entry().field('Dilution %');
 
-  entry().set('Finished Volume (oz)', (initialVolume * dilution) + initialVolume);
+  entry().set('Final Volume (oz)', (initialVolume * dilution) + initialVolume);
 }
