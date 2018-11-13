@@ -1,12 +1,13 @@
 function cocktailGlassFilled() {
-  const drinkware = field('Drinkware');
+  const e = entry();
+  const drinkware = e.field('Drinkware');
 
   if (!drinkware) {
     return 'Glassware not selected.';
   }
 
-  const served = field('Served')[0].field('Name');
-  const finalVolume = field('Final Volume (oz)');
+  const served = e.field('Served')[0].field('Name');
+  const finalVolume = e.field('Final Volume (oz)');
   const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
   const iceVolumes = {
     'On the Rocks': 0.0811,
@@ -19,6 +20,7 @@ function cocktailGlassFilled() {
   };
   const iceVolume = iceVolumes[served];
   const iceAmount = Math.floor(drinkwareCapacity / iceVolume);
+  const percent = ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
 
-  return ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
+  e.set('% of Glass Filled', percent);
 }
