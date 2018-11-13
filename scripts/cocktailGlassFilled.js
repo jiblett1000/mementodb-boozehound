@@ -1,6 +1,6 @@
 function cocktailGlassFilled() {
   const e = entry();
-  const drinkware = e.field('Drinkware');
+  const drinkware = e.field('Drinkware')[0];
 
   if (!drinkware) {
     return 'Glassware not selected.';
@@ -8,7 +8,7 @@ function cocktailGlassFilled() {
 
   const served = e.field('Served')[0].field('Name');
   const finalVolume = e.field('Final Volume (oz)');
-  const drinkwareCapacity = drinkware[0].e.field('Capacity (oz)');
+  const drinkwareCapacity = drinkware.field('Capacity (oz)');
   const iceVolumes = {
     'On the Rocks': 0.0811,
     'On Collins Cube': 4,
