@@ -18,5 +18,5 @@ function cocktailAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  entry().set(field('Initial ABV'), (abvTotal / ingredientsVolume).toFixed(2));
+  entry().set('Initial ABV', (abvTotal / ingredientsVolume).toFixed(2));
 }
