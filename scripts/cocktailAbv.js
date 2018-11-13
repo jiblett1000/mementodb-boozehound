@@ -18,7 +18,7 @@ function cocktailAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  return (ingredientsAbv / ingredientsVolume).toFixed(2));
+  return (ingredientsAbv / ingredientsVolume).toFixed(2);
 }
 
 function cocktailInitialAbv(initialVolume) {
@@ -26,5 +26,6 @@ function cocktailInitialAbv(initialVolume) {
 }
 
 function cocktailFinalAbv(finalVolume) {
-  entry().set('Final ABV', cocktailAbv(finalVolume);
+  const
+  entry().set('Final ABV', cocktailAbv(finalVolume));
 }

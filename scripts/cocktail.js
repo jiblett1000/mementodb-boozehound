@@ -7,8 +7,8 @@ const cocktail = {
   name: entry().field('Name'),
   ingredients: entry().field('Ingredients'),
   ingredient: {
-    amount: this.
-  }
+    amount: ,
+  },
   initialVolume: entry().field('Initial Volume (oz)'),
   initialAbv: entry().field('Initial ABV'),
   dilutionPercent: entry().field('Dilution %'),
