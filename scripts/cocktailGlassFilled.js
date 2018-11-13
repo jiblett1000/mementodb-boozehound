@@ -8,15 +8,15 @@ function cocktailGlassFilled() {
 
   const served = e.field('Served')[0].field('Name');
   const finalVolume = e.field('Final Volume (oz)');
-  const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
+  const drinkwareCapacity = drinkware[0].e.field('Capacity (oz)');
   const iceVolumes = {
     'On the Rocks': 0.0811,
     'On Collins Cube': 4,
     'On Crushed': drinkwareCapacity - finalVolume,
     'On a Big Rock': 4.432899285,
-    Neat: 0,
-    Slushy: 0,
-    Up: 0,
+    'Neat': 0,
+    'Slushy': 0,
+    'Up': 0,
   };
   const iceVolume = iceVolumes[served];
   const iceAmount = Math.floor(drinkwareCapacity / iceVolume);
