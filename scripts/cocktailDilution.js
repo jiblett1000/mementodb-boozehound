@@ -3,10 +3,10 @@ function cocktailDilution(initialAbvPercent, prepMethods) {
 
   const dilution = {
     'Stir': () => -1.21 * Math.pow(initialAbv, 2) + 1.246 * initialAbv + 0.145,
-    'Stir on Big Rock': () => this['Stir'](),
+    'Stir on Big Rock': () => -1.21 * Math.pow(initialAbv, 2) + 1.246 * initialAbv + 0.145,
     'Shake': () => -1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203,
-    'Short Shake': () => this['Shake']() * 0.75,
-    'Dirty Dump': () => this['Shake'](),
+    'Short Shake': () => (-1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203) * 0.75,
+    'Dirty Dump': () => -1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203,
     'Build': 0,
     'Dry Shake': 0,
     'Slushy': 0,
