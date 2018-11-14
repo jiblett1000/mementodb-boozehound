@@ -18,7 +18,7 @@ function cocktailGlassFilled() {
     const iceAmount = Math.floor(drinkwareCapacity / iceVolume);
     const percent = ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
 
-    return percent;
+    return percent * 100;
   }
 
   return 'Glassware not selected.';
