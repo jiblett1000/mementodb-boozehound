@@ -14,7 +14,7 @@ function cocktailVolume() {
     return sum + (unitRatio[unit] * amount);
   }, 0);
 
-  return volume;
+  return volume.toFixed(2);
 }
 
 // Calculate initial volume;
@@ -29,5 +29,5 @@ function cocktailFinalVolume() {
   const initialVolume = entry().field('Initial Volume (oz)');
   const dilution = entry().field('Dilution %') / 100;
 
-  entry().set('Final Volume (oz)', ((initialVolume * dilution) + initialVolume).toFixed(2));
+  entry().set('Final Volume (oz)', ((initialVolume * dilution) + initialVolume));
 }
