@@ -7,12 +7,12 @@ function cocktailDilution(initialAbvPercent, prepMethods) {
     'Shake': () => -1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203,
     'Short Shake': () => (-1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203) * 0.75,
     'Dirty Dump': () => -1.567 * Math.pow(initialAbv, 2) + 1.742 * initialAbv + 0.203,
-    'Build': 0,
-    'Dry Shake': 0,
-    'Slushy': 0,
-    'Muddle': 0,
-    'Fine Strain': 0,
-    'Swizzle': 0,
+    'Build': () => 0,
+    'Dry Shake': () => 0,
+    'Slushy': () => 0,
+    'Muddle': () => 0,
+    'Fine Strain': () => 0,
+    'Swizzle': () => 0,
   };
 
   const dilutionPercent = prepMethods.reduce((sum, meth) => sum + dilution[meth.field('Name')](), 0);
