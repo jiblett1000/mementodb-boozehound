@@ -1,4 +1,4 @@
-const businessName = libByName(this.businessName + ' ' + 'Settings').findByKey('Business Name').field('Value');
+const businessName = libByName('White Cap' + ' ' + 'Settings').findByKey('Business Name').field('Value');
 const volumeUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Volume Units').field('Value');
 const massUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Mass Units').field('Value');
 const salesTaxRate = libByName(this.businessName + ' ' + 'Settings').findByKey('Sales Tax Rate').field('Value');
