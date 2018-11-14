@@ -1,3 +1,10 @@
+const businessName = libByName(this.businessName + ' ' + 'Settings').findByKey('Business Name').field('Value');
+const volumeUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Volume Units').field('Value');
+const massUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Mass Units').field('Value');
+const salesTaxRate = libByName(this.businessName + ' ' + 'Settings').findByKey('Sales Tax Rate').field('Value');
+const decimalPlaceAccuracy = libByName(this.businessName + ' ' + 'Settings').findByKey('Decimal Place Accuracy').field('Value');
+
+
 function cocktailVolume() {
   const ingredients = entry().field('Ingredients');
   const unitRatio = {
@@ -14,7 +21,7 @@ function cocktailVolume() {
     return sum + (unitRatio[unit] * amount);
   }, 0);
 
-  return volume.toFixed(2);
+  return volume.toFixed(decimalPlaceAccuracy);
 }
 
 // Calculate initial volume;
@@ -29,5 +36,5 @@ function cocktailFinalVolume() {
   const initialVolume = entry().field('Initial Volume (oz)');
   const dilution = entry().field('Dilution %') / 100;
 
-  entry().set('Final Volume (oz)', ((initialVolume * dilution) + initialVolume).toFixed(2));
+  entry().set('Final Volume (oz)', ((initialVolume * dilution) + initialVolume).toFixed(decimalPlaceAccuracy));
 }

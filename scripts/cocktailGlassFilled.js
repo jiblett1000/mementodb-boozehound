@@ -1,3 +1,10 @@
+const businessName = libByName(this.businessName + ' ' + 'Settings').findByKey('Business Name').field('Value');
+const volumeUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Volume Units').field('Value');
+const massUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Mass Units').field('Value');
+const salesTaxRate = libByName(this.businessName + ' ' + 'Settings').findByKey('Sales Tax Rate').field('Value');
+const decimalPlaceAccuracy = libByName(this.businessName + ' ' + 'Settings').findByKey('Decimal Place Accuracy').field('Value');
+
+
 function cocktailGlassFilled() {
   const drinkware = entry().field('Drinkware');
 
@@ -16,7 +23,7 @@ function cocktailGlassFilled() {
     };
     const iceVolume = iceVolumes[served];
     const iceAmount = Math.floor(drinkwareCapacity / iceVolume);
-    const percent = ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(2);
+    const percent = ((finalVolume + (iceAmount * iceVolume)) / drinkwareCapacity).toFixed(decimalPlaceAccuracy);
 
     entry().set('% of Glass Filled', percent * 100);
   }
