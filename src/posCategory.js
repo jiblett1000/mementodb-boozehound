@@ -1,5 +1,5 @@
-function posCategory() {
-  var businessName = libByName(*Settings)
+/*function posCategory() {
+
   var entries = libByName('')
 
   if (field("White Cap Inventory")[0]) {
@@ -9,3 +9,4 @@ function posCategory() {
     "Cocktails";
   }
 }
+*/

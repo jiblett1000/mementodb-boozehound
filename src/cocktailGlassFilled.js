@@ -4,7 +4,6 @@ const massUnits = libByName(this.businessName + ' ' + 'Settings').findByKey('Mas
 const salesTaxRate = libByName(this.businessName + ' ' + 'Settings').findByKey('Sales Tax Rate').field('Value');
 const decimalPlaceAccuracy = libByName(this.businessName + ' ' + 'Settings').findByKey('Decimal Place Accuracy').field('Value');
 
-
 function cocktailGlassFilled() {
   const drinkware = entry().field('Drinkware');
 
