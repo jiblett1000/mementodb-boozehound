@@ -1,1 +1,1 @@
-import userSettings from './userSettings';
+import businessName from './userSettings';
