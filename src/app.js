@@ -1,2 +1,2 @@
-import { businessName } from './userSettings';
-//import cocktail from './userSettings';
+import userSettings from './userSettings';
+//  import cocktail from './userSettings';
