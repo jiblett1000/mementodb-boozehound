@@ -7,7 +7,7 @@ const salesTaxRate = libByName(this.businessName + ' ' + 'Settings').findByKey('
 const decimalPlaceAccuracy = libByName(this.businessName + ' ' + 'Settings').findByKey('Decimal Place Accuracy').field('Value');
 
 
-function cocktailVolume() {
+function drinkVolume() {
   const ingredients = entry().field('Ingredients');
   const unitRatio = {
     oz: 1,
@@ -28,13 +28,13 @@ function cocktailVolume() {
 
 // Calculate initial volume;
 
-function cocktailInitialVolume() {
-  entry().set('Initial Volume (oz)', cocktailVolume());
+function drinkInitialVolume() {
+  entry().set('Initial Volume (oz)', drinkVolume());
 }
 
 // Calculate final volume;
 
-function cocktailFinalVolume() {
+function drinkFinalVolume() {
   const initialVolume = entry().field('Initial Volume (oz)');
   const dilution = entry().field('Dilution %') / 100;
 

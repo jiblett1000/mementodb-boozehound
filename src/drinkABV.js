@@ -1,4 +1,4 @@
-function cocktailAbv(ingredientsVolume) {
+function drinkAbv(ingredientsVolume) {
   const ingredients = entry().field('Ingredients');
   const unitRatio = {
     oz: 1,
@@ -21,10 +21,10 @@ function cocktailAbv(ingredientsVolume) {
   return (ingredientsAbv / ingredientsVolume).toFixed(2);
 }
 
-function cocktailInitialAbv(initialVolume) {
-  entry().set('Initial ABV', cocktailAbv(initialVolume));
+function drinkInitialAbv(initialVolume) {
+  entry().set('Initial ABV', drinkAbv(initialVolume));
 }
 
-function cocktailFinalAbv(finalVolume) {
-  entry().set('Final ABV', cocktailAbv(finalVolume));
+function drinkFinalAbv(finalVolume) {
+  entry().set('Final ABV', drinkAbv(finalVolume));
 }

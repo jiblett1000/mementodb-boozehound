@@ -1,4 +1,4 @@
-function cocktailReadable() {
+function drinkReadable() {
   const e = entry();
   const ingredients = e.field('Ingredients');
   const unitPlurals = {

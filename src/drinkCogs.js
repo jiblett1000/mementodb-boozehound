@@ -1,4 +1,4 @@
-function cocktailCogs() {
+function drinkCogs() {
   const ingredients = field('Ingredients');
   const unitRatio = {
     oz: 30,

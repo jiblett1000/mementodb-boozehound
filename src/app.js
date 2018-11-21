@@ -1,2 +1,2 @@
 import userSettings from './userSettings';
-//  import cocktail from './userSettings';
+//  import drink from './userSettings';

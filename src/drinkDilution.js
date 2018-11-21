@@ -1,4 +1,4 @@
-function cocktailDilution(initialAbvPercent, prepMethods) {
+function drinkDilution(initialAbvPercent, prepMethods) {
   const initialAbv = initialAbvPercent / 100;
 
   const dilution = {
