@@ -5,5 +5,3 @@ const userSettings = {
   salesTaxRate: libByName('Boozehound Settings').findByKey('Sales Tax Rate').field('Value'),
   decPlaceAcc: libByName('Boozehound Settings').findByKey('Decimal Place Accuracy').field('Value'),
 };
-
-export default userSettings;
