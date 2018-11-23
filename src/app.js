@@ -1,5 +1,5 @@
-import drinkVol from './drinkVol';
 import usrPref from './usrPref';
+import drinkVol from './drinkVol';
 
 // Shorthand app variables;
 
