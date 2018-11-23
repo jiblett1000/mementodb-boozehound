@@ -1,6 +1,7 @@
+
 import drink from './drink';
 
-function drinkVol() {
+export function drinkVol() {
   const ingredients = e.get(drink.ingredients);
   const unitRatio = {
     oz: 1,

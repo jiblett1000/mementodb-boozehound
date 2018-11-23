@@ -94,31 +94,31 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _drinkVol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drinkVol */ \"./src/drinkVol.js\");\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n // Shorthand app variables;\n\nvar e = entry();\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n/* harmony import */ var _modules_drinks_drinkVol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/drinks/drinkVol */ \"./src/modules/drinks/drinkVol.js\");\n\n // Shorthand app variables;\n\nvar e = entry();\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
-/***/ "./src/drink.js":
-/*!**********************!*\
-  !*** ./src/drink.js ***!
-  \**********************/
+/***/ "./src/modules/drinks/drink.js":
+/*!*************************************!*\
+  !*** ./src/modules/drinks/drink.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar drink = {\n  name: 'Name',\n  ingredients: 'Ingredients',\n  ingredientsNeat: 'Ingredients Neat',\n  prepMethods: 'Prep Method(s)',\n  drinkware: 'Drinkware',\n  served: 'Served',\n  garnishes: 'Garnish(es)',\n  cogs: 'COGS',\n  initialVol: 'Initial Volume (oz)',\n  initialAbv: 'Initial ABV',\n  dilution: 'Dilution %',\n  finVol: 'Final Volume (oz)',\n  finAbv: 'Final ABV',\n  glassFilled: '% of Glass Filled'\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (drink);\n\n//# sourceURL=webpack:///./src/drink.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nvar drink = {\n  name: 'Name',\n  ingredients: 'Ingredients',\n  ingredientsNeat: 'Ingredients Neat',\n  prepMethods: 'Prep Method(s)',\n  drinkware: 'Drinkware',\n  served: 'Served',\n  garnishes: 'Garnish(es)',\n  cogs: 'COGS',\n  initialVol: 'Initial Volume (oz)',\n  initialAbv: 'Initial ABV',\n  dilution: 'Dilution %',\n  finVol: 'Final Volume (oz)',\n  finAbv: 'Final ABV',\n  glassFilled: '% of Glass Filled'\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (drink);\n\n//# sourceURL=webpack:///./src/modules/drinks/drink.js?");
 
 /***/ }),
 
-/***/ "./src/drinkVol.js":
-/*!*************************!*\
-  !*** ./src/drinkVol.js ***!
-  \*************************/
-/*! no exports provided */
+/***/ "./src/modules/drinks/drinkVol.js":
+/*!****************************************!*\
+  !*** ./src/modules/drinks/drinkVol.js ***!
+  \****************************************/
+/*! exports provided: drinkVol */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drink */ \"./src/drink.js\");\n\n\nfunction drinkVol() {\n  var ingredients = e.get(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].ingredients);\n  var unitRatio = {\n    oz: 1,\n    Dash: 0.0311,\n    Barspoon: 0.167,\n    Drop: 0.0016907,\n    Piece: 0\n  };\n  var vol = ingredients.reduce(function (sum, ingredient) {\n    var unit = ingredient.attr('Unit');\n    var amt = ingredient.attr('Amount');\n    return sum + unitRatio[unit] * amt;\n  }, 0);\n  return vol.toFixed(usrPref.decPlaceAcc());\n} // Calculate initial volume;\n\n\nfunction drinkInitialVol() {\n  e.set(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].initialVol, drinkVol());\n} // Calculate final volume;\n\n\nfunction drinkFinVol() {\n  var initialVol = e.get(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].initialVol);\n  var dilution = e.get(drinkDilution) / 100;\n  e.set(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].finalVol, (initialVol * dilution + initialVol).toFixed(usrPref.decPlaceAcc()));\n}\n\n//# sourceURL=webpack:///./src/drinkVol.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"drinkVol\", function() { return drinkVol; });\n/* harmony import */ var _drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drink */ \"./src/modules/drinks/drink.js\");\n\nfunction drinkVol() {\n  var ingredients = e.get(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].ingredients);\n  var unitRatio = {\n    oz: 1,\n    Dash: 0.0311,\n    Barspoon: 0.167,\n    Drop: 0.0016907,\n    Piece: 0\n  };\n  var vol = ingredients.reduce(function (sum, ingredient) {\n    var unit = ingredient.attr('Unit');\n    var amt = ingredient.attr('Amount');\n    return sum + unitRatio[unit] * amt;\n  }, 0);\n  return vol.toFixed(usrPref.decPlaceAcc());\n} // Calculate initial volume;\n\nfunction drinkInitialVol() {\n  e.set(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].initialVol, drinkVol());\n} // Calculate final volume;\n\n\nfunction drinkFinVol() {\n  var initialVol = e.get(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].initialVol);\n  var dilution = e.get(drinkDilution) / 100;\n  e.set(_drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"].finalVol, (initialVol * dilution + initialVol).toFixed(usrPref.decPlaceAcc()));\n}\n\n//# sourceURL=webpack:///./src/modules/drinks/drinkVol.js?");
 
 /***/ }),
 
