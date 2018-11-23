@@ -31,5 +31,5 @@ function drinkFinVol() {
   const initialVol = e.get(drink.initialVol);
   const dilution = e.get(drinkDilution) / 100;
 
-  e.set(drink.finalVol, ((initialVol * dilution) + initialVol).toFixed(userPref.decPlaceAcc()));
+  e.set(drink.finalVol, ((initialVol * dilution) + initialVol).toFixed(usrPref.decPlaceAcc()));
 }
