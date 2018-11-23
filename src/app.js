@@ -1,4 +1,4 @@
-import bizName from './usrPref';
+import { bizName } from './usrPref';
 // import drinkVol from './modules/drinks/drinkVol';
 
 
