@@ -1,3 +1,6 @@
-import userSettings from './userSettings';
+import drinkVol from './drinkVol';
+import usrPref from './usrPref';
 
-const get (field) => field(field);
+// Shorthand app variables;
+
+const e = entry();

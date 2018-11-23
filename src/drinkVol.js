@@ -1,7 +1,7 @@
-const e = entry();
+import drink from './drink';
 
-function drinkVolume() {
-  const ingredients = e.field('Ingredients');
+function drinkVol() {
+  const ingredients = e.get(drink.ingredients);
   const unitRatio = {
     oz: 1,
     Dash: 0.0311,
@@ -16,20 +16,20 @@ function drinkVolume() {
     return sum + (unitRatio[unit] * amt);
   }, 0);
 
-  return vol.toFixed(decPlaceAcc);
+  return vol.toFixed(usrPref.decPlaceAcc());
 }
 
 // Calculate initial volume;
 
 function drinkInitialVol() {
-  entry().set('Initial Volume (oz)', drinkVolume());
+  e.set(drink.initialVol, drinkVol());
 }
 
 // Calculate final volume;
 
 function drinkFinVol() {
-  const initialVol = e.field('Initial Volume (oz)');
-  const dilution = e.field('Dilution %') / 100;
+  const initialVol = e.get(drink.initialVol);
+  const dilution = e.get(drinkDilution) / 100;
 
-  e.set('Final Volume (oz)', ((initialVol * dilution) + initialVol).toFixed(decPlaceAcc));
+  e.set(drink.finalVol, ((initialVol * dilution) + initialVol).toFixed(userPref.decPlaceAcc()));
 }
