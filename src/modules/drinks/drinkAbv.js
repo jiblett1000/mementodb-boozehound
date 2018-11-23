@@ -6,7 +6,7 @@ function drinkAbv(ingredientsVolume) {
     Drop: 0.0016907,
     Piece: 0,
   };
-  const ingredientsAbv = entry().get(drink.ingredients).reduce((sum, ingredient) => {
+  const ingredientsAbv = e.get(drink.ingredients).reduce((sum, ingredient) => {
     if (ingredient.field('ABV')) {
       const unit = ingredient.attr('Unit');
       const abv = ingredient.field('ABV');
@@ -21,9 +21,9 @@ function drinkAbv(ingredientsVolume) {
 }
 
 function drinkInitialAbv(initialVolume) {
-  entry().set(drink.initialAbv, drinkAbv(get(drink.initialVol)));
+  e.set(drink.initialAbv, drinkAbv(get(drink.initialVol)));
 }
 
 function drinkFinalAbv(finalVolume) {
-  entry().set(drink.finalAbv, drinkAbv(get(drink.finalVol)));
+  e.set(drink.finalAbv, drinkAbv(get(drink.finalVol)));
 }
