@@ -1,5 +1,4 @@
 function drinkCogs() {
-  const ingredients = field('Ingredients');
   const unitRatio = {
     oz: 30,
     Dash: 0.92,
@@ -10,7 +9,7 @@ function drinkCogs() {
 
   // Calculate cost of ingredients
 
-  const ingredientTotal = ingredients.reduce((sum, ingredient) => {
+  const ingredientTotal = get(drink.ingredients).reduce((sum, ingredient) => {
     const unit = ingredient.attr('Unit');
     const amount = ingredient.attr('Amount');
     const cost = ingredient.field('Cost');
@@ -20,8 +19,7 @@ function drinkCogs() {
 
   // Calculate cost of garnish(es)
 
-  const garnishes = field('Garnish(es)');
-  const garnishTotal = garnishes.reduce((sum, garnish) => {
+  const garnishTotal = get(drink.garnishes).reduce((sum, garnish) => {
     const garnishCost = garnish.field('Cost');
 
     return sum + garnishCost;
@@ -29,5 +27,5 @@ function drinkCogs() {
 
   // Add ingredient and Garnish costs together
 
-  return (ingredientTotal + garnishTotal).toFixed(2);
+  return (ingredientTotal + garnishTotal).toFixed(userSettings.decPlaceAcc);
 }

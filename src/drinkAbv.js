@@ -1,5 +1,4 @@
 function drinkAbv(ingredientsVolume) {
-  const ingredients = entry().field('Ingredients');
   const unitRatio = {
     oz: 1,
     Dash: 0.0311,
@@ -7,7 +6,7 @@ function drinkAbv(ingredientsVolume) {
     Drop: 0.0016907,
     Piece: 0,
   };
-  const ingredientsAbv = ingredients.reduce((sum, ingredient) => {
+  const ingredientsAbv = entry().get(drink.ingredients).reduce((sum, ingredient) => {
     if (ingredient.field('ABV')) {
       const unit = ingredient.attr('Unit');
       const abv = ingredient.field('ABV');
@@ -18,13 +17,13 @@ function drinkAbv(ingredientsVolume) {
     return sum + 0;
   }, 0);
 
-  return (ingredientsAbv / ingredientsVolume).toFixed(2);
+  return (ingredientsAbv / ingredientsVolume).toFixed(userSettings.decPlaceAcc);
 }
 
 function drinkInitialAbv(initialVolume) {
-  entry().set('Initial ABV', drinkAbv(initialVolume));
+  entry().set(drink.initialAbv, drinkAbv(get(drink.initialVol)));
 }
 
 function drinkFinalAbv(finalVolume) {
-  entry().set('Final ABV', drinkAbv(finalVolume));
+  entry().set(drink.finalAbv, drinkAbv(get(drink.finalVol)));
 }

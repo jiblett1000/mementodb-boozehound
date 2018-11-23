@@ -1,4 +1,4 @@
-function drinkReadable() {
+function drinkNeat() {
   const e = entry();
   const ingredients = e.field('Ingredients');
   const unitPlurals = {
@@ -11,18 +11,18 @@ function drinkReadable() {
 
   // Add each ingredient to the specs list
   const specs = ingredients.reduce((text, ingredient, index) => {
-    const amount = ingredient.attr('Amount');
+    const amt = ingredient.attr('Amount');
     const name = ingredient.field('Name');
     const unitRaw = ingredient.attr('Unit');
 
     // Check if singular or plural
-    const unit = (amount <= 1) ? unitRaw : unitPlurals[unitRaw];
+    const unit = (amt <= 1) ? unitRaw : unitPlurals[unitRaw];
 
     // Check if last ingredient
-    const line = text + (amount + ' ' + unit + '  ' + name);
+    const line = `${text} ${amt} ${unit} ${name}`;
 
-    return (index < ingredients.length - 1) ? line + '\n' : line;
+    return (index < ingredients.length - 1) ? `${line} \n` : line;
   }, '');
 
-  e.set('Ingredients_Readable', specs);
+  e.set('Ingredients Neat', specs);
 }

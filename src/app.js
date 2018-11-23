@@ -1,2 +1,3 @@
 import userSettings from './userSettings';
-//  import drink from './userSettings';
+
+const get (field) => field(field);
