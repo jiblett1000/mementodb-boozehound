@@ -102,11 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usr
 /*!************************!*\
   !*** ./src/usrPref.js ***!
   \************************/
-/*! exports provided: bizName */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"bizName\", function() { return bizName; });\nvar bizName = libByName('Boozehound Settings').findByKey('Business Name').field('Value');\n/*  volUnits: () => libByName(`${this.bizName} Settings`).findByKey('Volume Units').field('Value'),\n  massUnits: () => libByName(`${this.bizName} Settings`).findByKey('Mass Units').field('Value'),\n  salesTaxRate: () => libByName(`${this.bizName} Settings`).findByKey('Sales Tax Rate').field('Value'),\n  decPlaceAcc: () => libByName(`${this.bizName} Settings`).findByKey('Decimal Place Accuracy').field('Value'),\n\n*/\n\n//# sourceURL=webpack:///./src/usrPref.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nvar bizName = libByName('Boozehound Settings').findByKey('Business Name').field('Value');\n/*  volUnits: () => libByName(`${this.bizName} Settings`).findByKey('Volume Units').field('Value'),\n  massUnits: () => libByName(`${this.bizName} Settings`).findByKey('Mass Units').field('Value'),\n  salesTaxRate: () => libByName(`${this.bizName} Settings`).findByKey('Sales Tax Rate').field('Value'),\n  decPlaceAcc: () => libByName(`${this.bizName} Settings`).findByKey('Decimal Place Accuracy').field('Value'),\n\n*/\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (bizName);\n\n//# sourceURL=webpack:///./src/usrPref.js?");
 
 /***/ })
 
