@@ -13,6 +13,8 @@ const drink = {
   finVol: 'Final Volume (oz)',
   finAbv: 'Final ABV',
   glassFilled: '% of Glass Filled',
+  get: field => entry().field(this.field),
+  set: (field, value) => set(this.field, value),
 };
 
 export default drink;
