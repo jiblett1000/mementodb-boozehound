@@ -5,8 +5,6 @@ import Settings from './usrPref';
 const e = entry();
 
 // Main app function;
-function app(bizName, desiredFunction) {
-
+function app(bizName) {
   const settings = new Settings(bizName);
-
 }
