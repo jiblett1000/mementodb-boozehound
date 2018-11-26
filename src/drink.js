@@ -16,7 +16,7 @@ export default class Drink {
     this.glassFilled = '% of Glass Filled';
   }
 
-  get(field) {
+  get (field) {
     return entry().field(this.field);
   }
 

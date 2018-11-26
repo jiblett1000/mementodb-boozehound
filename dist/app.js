@@ -90,23 +90,10 @@
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n // import drinkVol from './modules/drinks/drinkVol';\n// Shorthand app variables;\n\nvar e = entry(); // Main app function;\n\nfunction app() {\n  //  const settings = new Settings(bizName);\n  return message('test');\n}\n\n//# sourceURL=webpack:///./src/app.js?");
-
-/***/ }),
-
-/***/ "./src/usrPref.js":
-/*!************************!*\
-  !*** ./src/usrPref.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Settings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Settings = function Settings(bizName) {\n  _classCallCheck(this, Settings);\n\n  this.bizName = bizName;\n  this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack:///./src/usrPref.js?");
+eval("// Main app function;\nfunction app() {\n  //  const settings = new Settings(bizName);\n  return message('test');\n}\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 
