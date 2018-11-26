@@ -8,5 +8,5 @@ const e = entry();
 function app(bizName) {
   const settings = new Settings(bizName);
 
-  return message(settings.bizName);
+  return message('test');
 }
