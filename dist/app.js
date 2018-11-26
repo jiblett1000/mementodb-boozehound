@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n // import drinkVol from './modules/drinks/drinkVol';\n// Shorthand app variables;\n\nvar e = entry();\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n // import drinkVol from './modules/drinks/drinkVol';\n// Shorthand app variables;\n\nvar e = entry(); // Main app function;\n\nfunction app(bizName, desiredFunction) {\n  var settings = new _usrPref__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\n}\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -102,11 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usr
 /*!************************!*\
   !*** ./src/usrPref.js ***!
   \************************/
-/*! exports provided: bizName, volUnits */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"bizName\", function() { return bizName; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"volUnits\", function() { return volUnits; });\nvar bizName = function bizName() {\n  return libByName('Boozehound Settings').findByKey('Business Name').field('Value');\n};\n\nvar volUnits = function volUnits() {\n  return libByName(\"\".concat(bizName(), \" Settings\")).findByKey('Volume Units').field('Value');\n};\n/*  massUnits: () => libByName(`${this.bizName} Settings`).findByKey('Mass Units').field('Value'),\n  salesTaxRate: () => libByName(`${this.bizName} Settings`).findByKey('Sales Tax Rate').field('Value'),\n  decPlaceAcc: () => libByName(`${this.bizName} Settings`).findByKey('Decimal Place Accuracy').field('Value'),\n\n*/\n\n\n\n\n//# sourceURL=webpack:///./src/usrPref.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Settings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Settings = function Settings(bizName) {\n  _classCallCheck(this, Settings);\n\n  this.bizName = bizName;\n  this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack:///./src/usrPref.js?");
 
 /***/ })
 

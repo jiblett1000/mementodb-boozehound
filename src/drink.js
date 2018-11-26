@@ -1,20 +1,26 @@
-const drink = {
-  name: 'Name',
-  ingredients: 'Ingredients',
-  ingredientsNeat: 'Ingredients Neat',
-  prepMethods: 'Prep Method(s)',
-  drinkware: 'Drinkware',
-  served: 'Served',
-  garnishes: 'Garnish(es)',
-  cogs: 'COGS',
-  initialVol: 'Initial Volume (oz)',
-  initialAbv: 'Initial ABV',
-  dilution: 'Dilution %',
-  finVol: 'Final Volume (oz)',
-  finAbv: 'Final ABV',
-  glassFilled: '% of Glass Filled',
-  get: field => entry().field(this.field),
-  set: (field, value) => set(this.field, value),
-};
+export default class Drink {
+  constructor() {
+    this.name = 'Name';
+    this.ingredients = 'Ingredients';
+    this.ingredientsNeat = 'Ingredients Neat';
+    this.prepMethods = 'Prep Method(s)';
+    this.drinkware = 'Drinkware';
+    this.served = 'Served';
+    this.garnishes = 'Garnish(es)';
+    this.cogs = 'COGS';
+    this.initialVol = 'Initial Volume (oz)';
+    this.initialAbv = 'Initial ABV';
+    this.dilution = 'Dilution %';
+    this.finVol = 'Final Volume (oz)';
+    this.finAbv = 'Final ABV';
+    this.glassFilled = '% of Glass Filled';
+  }
 
-export default drink;
+  get(field) {
+    return entry().field(this.field);
+  }
+
+  set(field, value) {
+    set(this.field, value);
+  }
+}
