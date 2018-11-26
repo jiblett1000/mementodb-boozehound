@@ -6,7 +6,7 @@ const e = entry();
 
 // Main app function;
 function app(bizName) {
-  const settings = new Settings(bizName);
+//  const settings = new Settings(bizName);
 
   return message('test');
 }
