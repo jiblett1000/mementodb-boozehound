@@ -5,7 +5,7 @@ import Settings from './usrPref';
 const e = entry();
 
 // Main app function;
-function app(bizName) {
+function app() {
 //  const settings = new Settings(bizName);
 
   return message('test');
