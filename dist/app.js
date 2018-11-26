@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n // import drinkVol from './modules/drinks/drinkVol';\n// Shorthand app variables;\n\nvar e = entry(); // Main app function;\n\nfunction app(bizName) {\n  var settings = new _usrPref__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\n}\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n // import drinkVol from './modules/drinks/drinkVol';\n// Shorthand app variables;\n\nvar e = entry(); // Main app function;\n\nfunction app(bizName) {\n  var settings = new _usrPref__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\n  return message(settings.bizName);\n}\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
