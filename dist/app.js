@@ -1,4 +1,4 @@
-var app =
+var boozehound =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -91,11 +91,11 @@ var app =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: main */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"main\", function() { return main; });\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n\nfunction main(bizName) {\n  //  let settings = new Settings();\n  return message(bizName);\n}\n/*\nmodule.exports = {\n  main(bizName) {\n  //  let settings = new Settings();\n    return message(bizName);\n  },\n  settings: new Settings(),\n};\n*/\n\n\n\n\n//# sourceURL=webpack://app/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n\nfunction main(bizName) {\n  //  let settings = new Settings();\n  return message(bizName);\n}\n/*\nmodule.exports = {\n  main(bizName) {\n  //  let settings = new Settings();\n    return message(bizName);\n  },\n  settings: new Settings(),\n};\n*/\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  main: main\n});\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -107,8 +107,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Settings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Settings = function Settings(bizName) {\n  _classCallCheck(this, Settings);\n\n  this.bizName = bizName;\n  this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack://app/./src/usrPref.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (settings = {\n  constructor: function constructor(bizName) {\n    this.bizName = bizName;\n    this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n    this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n    this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n    this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n  }\n});\n\n//# sourceURL=webpack://boozehound/./src/usrPref.js?");
 
 /***/ })
 
-/******/ });
+/******/ })["default"];

@@ -1,4 +1,4 @@
-export default class Settings {
+export default settings = {
   constructor(bizName) {
     this.bizName = bizName;
     this.volUnits = libByName(`${this.bizName} Settings`).findByKey('Volume Units').field('Value');

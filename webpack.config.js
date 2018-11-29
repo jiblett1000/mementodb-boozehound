@@ -7,7 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.js',
     libraryTarget: 'var',
-    library: 'app',
+    libraryExport: 'default',
+    library: 'boozehound',
   },
   module: {
     rules: [

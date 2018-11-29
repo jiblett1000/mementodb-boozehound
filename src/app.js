@@ -15,4 +15,4 @@ module.exports = {
 };
 */
 
-export { main };
+export default { main };
