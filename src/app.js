@@ -1,6 +1,6 @@
 
 // Main app function;
-function app() {
+export default function app() {
 //  const settings = new Settings(bizName);
 
   return message('test');

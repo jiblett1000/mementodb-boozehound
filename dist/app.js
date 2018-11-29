@@ -90,10 +90,11 @@
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// Main app function;\nfunction app() {\n  //  const settings = new Settings(bizName);\n  return message('test');\n}\n\n//# sourceURL=webpack:///./src/app.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return app; });\n// Main app function;\nfunction app() {\n  //  const settings = new Settings(bizName);\n  return message('test');\n}\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 
