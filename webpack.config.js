@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.js',
+    libraryExport: 'default',
   },
   module: {
     rules: [
