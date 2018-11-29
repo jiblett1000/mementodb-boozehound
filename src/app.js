@@ -1,4 +1,4 @@
-import Settings from './usrPref';
+// import Settings from './usrPref';
 
 
 function main(bizName) {
