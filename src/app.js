@@ -1,5 +1,8 @@
-function main(bizName) {
-  return message(bizName);
-}
+import Settings from './usrPref';
 
-export default { main };
+module.exports = {
+  settings: new Settings(),
+  main(bizName) {
+    return message(bizName);
+  },
+}
