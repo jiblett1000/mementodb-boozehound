@@ -5,3 +5,7 @@ export default function app() {
 
   return message('test');
 }
+
+module.exports = {
+  app,
+};
