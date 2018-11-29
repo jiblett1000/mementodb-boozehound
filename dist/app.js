@@ -95,7 +95,7 @@ var boozehound =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n\nfunction main(bizName) {\n  //  let settings = new Settings();\n  return message(bizName);\n}\n/*\nmodule.exports = {\n  main(bizName) {\n  //  let settings = new Settings();\n    return message(bizName);\n  },\n  settings: new Settings(),\n};\n*/\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  main: main\n});\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n\nfunction main(bizName) {\n  return message(bizName);\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  main: main\n});\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
