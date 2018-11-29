@@ -1,5 +1,3 @@
-import drink from './drink';
-
 function drinkAbv(ingredientsVolume) {
   const unitRatio = {
     oz: 1,
@@ -22,10 +20,10 @@ function drinkAbv(ingredientsVolume) {
   return (ingredientsAbv / ingredientsVolume).toFixed(userSettings.decPlaceAcc);
 }
 
-function drinkInitialAbv(initialVolume) {
+export function drinkInitialAbv(initialVolume) {
   e.set(drink.initialAbv, drinkAbv(get(drink.initialVol)));
 }
 
-function drinkFinalAbv(finalVolume) {
+export function drinkFinAbv(finalVolume) {
   e.set(drink.finalAbv, drinkAbv(get(drink.finalVol)));
 }

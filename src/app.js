@@ -1,5 +1,4 @@
-import Settings from './modules/usrPref';
-import Drink from './modules/drinks/drink';
+const e = entry();
 
 module.exports = {
   main() {

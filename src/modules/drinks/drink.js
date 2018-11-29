@@ -1,3 +1,5 @@
+import { drinkInitialAbv, drinkFinAbv } from './drinkAbv';
+
 export default class Drink {
   constructor() {
     this.name = 'Name';
