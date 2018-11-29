@@ -91,11 +91,11 @@ var app =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: default */
+/*! exports provided: main */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return main; });\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\nfunction main(bizName) {\n  //  let settings = new Settings();\n  return message(bizName);\n}\n/*\nmodule.exports = {\n  main(bizName) {\n  //  let settings = new Settings();\n    return message(bizName);\n  },\n  settings: new Settings(),\n};\n*/\n\n//# sourceURL=webpack://app/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"main\", function() { return main; });\n/* harmony import */ var _usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./usrPref */ \"./src/usrPref.js\");\n\n\nfunction main(bizName) {\n  //  let settings = new Settings();\n  return message(bizName);\n}\n/*\nmodule.exports = {\n  main(bizName) {\n  //  let settings = new Settings();\n    return message(bizName);\n  },\n  settings: new Settings(),\n};\n*/\n\n\n\n\n//# sourceURL=webpack://app/./src/app.js?");
 
 /***/ }),
 

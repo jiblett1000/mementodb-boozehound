@@ -1,7 +1,7 @@
 import Settings from './usrPref';
 
 
-export default function main(bizName) {
+function main(bizName) {
 //  let settings = new Settings();
   return message(bizName);
 }
@@ -14,3 +14,5 @@ module.exports = {
   settings: new Settings(),
 };
 */
+
+export { main };
