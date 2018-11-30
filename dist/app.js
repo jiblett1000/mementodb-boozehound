@@ -107,7 +107,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n// Set fields for calculated entries;\nfunction setFields() {}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n// Set fields for calculated entries;\nfunction setFields() {\n  message('test');\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
 
 /***/ })
 

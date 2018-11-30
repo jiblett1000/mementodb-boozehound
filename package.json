@@ -2,6 +2,7 @@
   "name": "mementodb-boozehound",
   "version": "1.0.0",
   "description": "Bar management database for use in MementoDB",
+  "private": true,
   "scripts": {
     "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
