@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "convert-units": "^2.3.4",
     "npm": "^6.4.1",
     "update": "^0.7.4"
   },

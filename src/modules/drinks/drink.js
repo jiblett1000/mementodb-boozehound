@@ -1,14 +1,15 @@
-import { drinkInitialAbv, drinkFinAbv } from './drinkAbv';
+import { drinkVol } from './drinkVol';
+// import { drinkInitialAbv as initialAbv, drinkFinAbv as finAbv } from './drinkAbv';
 
 export default class Drink {
-  constructor() {
-    this.name = 'Name';
-    this.ingredients = 'Ingredients';
+  constructor(name, ingredients, prepMethods, drinkware, served, garnishes) {
+    this.name = name;
+    this.ingredients = ingredients;
     this.ingredientsNeat = 'Ingredients Neat';
-    this.prepMethods = 'Prep Method(s)';
-    this.drinkware = 'Drinkware';
-    this.served = 'Served';
-    this.garnishes = 'Garnish(es)';
+    this.prepMethods = prepMethods;
+    this.drinkware = drinkware;
+    this.served = served;
+    this.garnishes = garnishes;
     this.cogs = 'COGS';
     this.initialVol = 'Initial Volume (oz)';
     this.initialAbv = 'Initial ABV';
@@ -18,11 +19,22 @@ export default class Drink {
     this.glassFilled = '% of Glass Filled';
   }
 
-  get (field) {
-    return entry().field(this.field);
+  get initialVol() {
+    const unitRatio = {
+      oz: 1,
+      Dash: 0.0311,
+      Barspoon: 0.167,
+      Drop: 0.0016907,
+      Piece: 0,
+    };
+    const vol = this.ingredients.reduce((sum, ingredient) => {
+      const unit = ingredient.attr('Unit');
+      const amt = ingredient.attr('Amount');
+
+      return sum + (unitRatio[unit] * amt);
+    }, 0);
+
+    return vol.toFixed(usrPref.decPlaceAcc());
   }
 
-  set(field, value) {
-    set(this.field, value);
-  }
 }
