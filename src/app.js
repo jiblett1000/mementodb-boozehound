@@ -1,7 +1,3 @@
-const e = entry();
+import setFields from './modules/entry/setFields';
 
-module.exports = {
-  main() {
-    return message(bizName);
-  },
-}
+const e = entry();

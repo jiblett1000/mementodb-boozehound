@@ -91,10 +91,23 @@ var boozehound =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var e = entry();\nmodule.exports = {\n  main: function main() {\n    return message(bizName);\n  }\n};\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\nvar e = entry();\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/modules/entry/setFields.js":
+/*!****************************************!*\
+  !*** ./src/modules/entry/setFields.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n// Set fields for calculated entries;\nfunction setFields() {}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
 
 /***/ })
 
