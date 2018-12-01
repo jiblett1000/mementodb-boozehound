@@ -91,11 +91,11 @@ var boozehound =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: setFields */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n\nvar e = entry();\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/usrPref */ \"./src/modules/usrPref.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\nvar usrPref = new _modules_usrPref__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\nvar e = entry();\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -108,6 +108,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n// Set fields for calculated entries;\nfunction setFields() {\n  message('test');\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
+
+/***/ }),
+
+/***/ "./src/modules/usrPref.js":
+/*!********************************!*\
+  !*** ./src/modules/usrPref.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return UserPref; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserPref = function UserPref(bizName) {\n  _classCallCheck(this, UserPref);\n\n  this.bizName = bizName || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack://boozehound/./src/modules/usrPref.js?");
 
 /***/ })
 

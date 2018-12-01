@@ -4,14 +4,35 @@ export default class Drink {
   constructor(name, ingredients, prepMethods, drinkware, served, garnishes) {
     this.name = name;
     this.ingredients = ingredients;
-    this.ingredientsNeat = 'Ingredients Neat';
     this.prepMethods = prepMethods;
     this.drinkware = drinkware;
     this.served = served;
     this.garnishes = garnishes;
-//    this.cogs = 'COGS';
-    this.finAbv = 'Final ABV';
-    this.glassFilled = '% of Glass Filled';
+  }
+
+  get drinkNeat() {
+    const unitPlurals = {
+      oz: 'oz',
+      Barspoon: 'Barspoons',
+      Drop: 'Drops',
+      Piece: 'Pieces',
+      Dash: 'Dashes',
+    };
+
+    // Add each ingredient to the specs list
+    const specs = this.ingredients.reduce((text, ingredient, index) => {
+      const name = ingredient.field('Name');
+      const amt = ingredient.attr('Amount');
+      const unitRaw = ingredient.attr('Unit');
+
+      // Check if singular or plural
+      const unit = (amt <= 1) ? unitRaw : unitPlurals[unitRaw];
+
+      // Check if last ingredient
+      const line = `${text} ${amt} ${unit} ${name}`;
+
+      return (index < this.ingredients.length - 1) ? `${line} \n` : line;
+    }, '');
   }
 
   get cogs() {
@@ -44,7 +65,7 @@ export default class Drink {
     return vol.toFixed(usrPref.decPlaceAcc());
   }
 
-  get initialAbv() {
+  get ingredientsAbv() {
     const ingredientsAbv = this.ingredients.reduce((sum, ingredient) => {
       if (ingredient.field('ABV')) {
         const unit = ingredient.attr('Unit');
@@ -56,7 +77,11 @@ export default class Drink {
       return sum + 0;
     }, 0);
 
-    return (ingredientsAbv / this.initialVol).toFixed(usrPref.decPlaceAcc);
+    return ingredientsAbv;
+  }
+
+  get initialAbv() {
+    return (this.ingredientsAbv / this.initialVol).toFixed(usrPref.decPlaceAcc);
   }
 
   get dilution() {
@@ -83,5 +108,27 @@ export default class Drink {
 
   get finVol() {
     return ((this.initialVol * this.dilution) + this.initialVol).toFixed(usrPref.decPlaceAcc());
+  }
+
+  get finAbv() {
+    return (this.ingredientsAbv / this.finVol).toFixed(usrPref.decPlaceAcc);
+  }
+
+  get glassFilled() {
+    if (this.drinkware) {
+      const served = this.served[0].field('Name');
+      const capacity = this.drinkware[0].field('Capacity (oz)');
+      const iceVols = {
+        'On the Rocks': 0.0811,
+        'On Collins Cube': 4,
+        'On Crushed': capacity - this.finVol,
+        'On a Big Rock': 4.432899285,
+        'Neat': 0,
+        'Slushy': 0,
+        'Up': 0,
+      };
+      const iceVol = iceVols[served];
+      const iceAmt = Math.floor(capacity / iceVol);
+      const percent = ((this.finVol + (iceAmt * iceVol)) / drinkwareCapacity).toFixed(decPlaceAcc);
   }
 }
