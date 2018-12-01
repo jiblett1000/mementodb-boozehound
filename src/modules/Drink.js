@@ -8,6 +8,16 @@ export default class Drink {
     this.drinkware = drinkware;
     this.served = served;
     this.garnishes = garnishes;
+    this.fields = {
+      'Ingredients Neat': this.ingredientsNeat,
+      'COGS': this.cogs,
+      'Initial Volume': this.initialVol,
+      'Initial ABV': this.initialAbv,
+      'Dilution %': this.dilution,
+      'Final Volume': this.finVol,
+      'Final ABV': this.finAbv,
+      '% of Glass Filled': this.glassFilled,
+    };
   }
 
   get ingredientsNeat() {
@@ -44,7 +54,7 @@ export default class Drink {
       const amt = ingredient.attr('Amount');
       const cost = ingredient.field('Cost');
 
-      return sum + (convert(amt).from(unit).to('fl-oz') * cost);
+      return sum + (convert(amt).from(unit).to(userSettings.volUnits) * cost);
     }, 0);
 
     // Calculate cost of garnish(es);
@@ -59,7 +69,7 @@ export default class Drink {
       const unit = ingredient.attr('Unit');
       const amt = ingredient.attr('Amount');
 
-      return sum + convert(amt).from(unit).to('fl-oz');
+      return sum + convert(amt).from(unit).to(userSettings.volUnits);
     }, 0);
 
     return vol.toFixed(userSettings.decPlaceAcc());
@@ -72,7 +82,7 @@ export default class Drink {
         const abv = ingredient.field('ABV');
         const amt = ingredient.attr('Amount');
 
-        return sum + (convert(amt).from(unit).to('fl-oz') * abv);
+        return sum + (convert(amt).from(unit).to(userSettings.volUnits) * abv);
       }
       return sum + 0;
     }, 0);
@@ -131,7 +141,7 @@ export default class Drink {
       const iceAmt = Math.floor(capacity / iceVol);
       const percent = ((this.finVol + (iceAmt * iceVol)) / capacity);
 
-      return percent.toFixed(userSettings.decPlaceAcc) * 100;
+      return (percent * 100).toFixed(userSettings.decPlaceAcc);
     }
 
     return 'Drinkware not selected';
