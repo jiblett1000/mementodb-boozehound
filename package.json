@@ -1,14 +1,14 @@
 {
   "name": "mementodb-boozehound",
   "version": "1.0.0",
-  "description": "Bar management database for use in MementoDB",
+  "description": "Bar management app for use in MementoDB",
   "private": true,
   "scripts": {
     "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "convert-units": "^2.3.4",
+    "convert-units": "https://github.com/jiblett1000/convert-units.git",
     "npm": "^6.4.1",
     "update": "^0.7.4"
   },

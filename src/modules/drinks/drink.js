@@ -1,5 +1,4 @@
-import { drinkVol } from './drinkVol';
-// import { drinkInitialAbv as initialAbv, drinkFinAbv as finAbv } from './drinkAbv';
+const convert = require('convert-units');
 
 export default class Drink {
   constructor(name, ingredients, prepMethods, drinkware, served, garnishes) {
@@ -36,5 +35,4 @@ export default class Drink {
 
     return vol.toFixed(usrPref.decPlaceAcc());
   }
-
 }
