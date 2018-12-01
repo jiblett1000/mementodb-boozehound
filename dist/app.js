@@ -619,11 +619,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
