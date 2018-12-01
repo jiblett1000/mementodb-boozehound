@@ -1,8 +1,4 @@
-import usrPref from '../../usrPref';
-import drink from './drink';
-
-export function drinkVol() {
-  const ingredients = e.get(drink.ingredients);
+export default function drinkInitialVol(ingredients) {
   const unitRatio = {
     oz: 1,
     Dash: 0.0311,

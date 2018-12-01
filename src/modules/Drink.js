@@ -10,7 +10,7 @@ export default class Drink {
     this.garnishes = garnishes;
   }
 
-  get drinkNeat() {
+  get ingredientsNeat() {
     const unitPlurals = {
       oz: 'oz',
       Barspoon: 'Barspoons',
@@ -23,16 +23,18 @@ export default class Drink {
     const specs = this.ingredients.reduce((text, ingredient, index) => {
       const name = ingredient.field('Name');
       const amt = ingredient.attr('Amount');
-      const unitRaw = ingredient.attr('Unit');
+      let unit = ingredient.attr('Unit');
 
       // Check if singular or plural
-      const unit = (amt <= 1) ? unitRaw : unitPlurals[unitRaw];
+      unit = (amt <= 1) ? unit : unitPlurals[unit];
 
       // Check if last ingredient
       const line = `${text} ${amt} ${unit} ${name}`;
 
       return (index < this.ingredients.length - 1) ? `${line} \n` : line;
     }, '');
+
+    return specs;
   }
 
   get cogs() {
@@ -46,12 +48,10 @@ export default class Drink {
     }, 0);
 
     // Calculate cost of garnish(es);
-    const garnishTotal = this.garnishes.reduce((sum, garnish) => {
-      return sum + garnish.field('Cost');
-    }, 0);
+    const garnishTotal = this.garnishes.reduce((sum, garnish) => sum + garnish.field('Cost'), 0);
 
     // Add ingredient and Garnish costs together;
-    return (ingredientTotal + garnishTotal).toFixed(usrPref.decPlaceAcc);
+    return (ingredientTotal + garnishTotal).toFixed(userSettings.decPlaceAcc);
   }
 
   get initialVol() {
@@ -62,7 +62,7 @@ export default class Drink {
       return sum + convert(amt).from(unit).to('fl-oz');
     }, 0);
 
-    return vol.toFixed(usrPref.decPlaceAcc());
+    return vol.toFixed(userSettings.decPlaceAcc());
   }
 
   get ingredientsAbv() {
@@ -81,7 +81,7 @@ export default class Drink {
   }
 
   get initialAbv() {
-    return (this.ingredientsAbv / this.initialVol).toFixed(usrPref.decPlaceAcc);
+    return (this.ingredientsAbv / this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get dilution() {
@@ -107,11 +107,11 @@ export default class Drink {
   }
 
   get finVol() {
-    return ((this.initialVol * this.dilution) + this.initialVol).toFixed(usrPref.decPlaceAcc());
+    return ((this.initialVol * this.dilution) + this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get finAbv() {
-    return (this.ingredientsAbv / this.finVol).toFixed(usrPref.decPlaceAcc);
+    return (this.ingredientsAbv / this.finVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get glassFilled() {
@@ -129,6 +129,11 @@ export default class Drink {
       };
       const iceVol = iceVols[served];
       const iceAmt = Math.floor(capacity / iceVol);
-      const percent = ((this.finVol + (iceAmt * iceVol)) / drinkwareCapacity).toFixed(decPlaceAcc);
+      const percent = ((this.finVol + (iceAmt * iceVol)) / capacity);
+
+      return percent.toFixed(userSettings.decPlaceAcc) * 100;
+    }
+
+    return 'Drinkware not selected';
   }
 }

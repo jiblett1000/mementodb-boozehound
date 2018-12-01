@@ -8,7 +8,7 @@ function drinkGlassFilled() {
     const iceVols = {
       'On the Rocks': 0.0811,
       'On Collins Cube': 4,
-      'On Crushed': drinkwareCapacity - finalVolume,
+      'On Crushed': drinkwareCapacity - finVol,
       'On a Big Rock': 4.432899285,
       'Neat': 0,
       'Slushy': 0,
