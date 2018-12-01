@@ -3,6 +3,7 @@ import Drink from '../Drink';
 const e = entry();
 const drink = new Drink(
   e.field('Name'),
+  e.field('Ingredients'),
   e.field('Prep Method(s)'),
   e.field('Drinkware'),
   e.field('Served'),
