@@ -623,7 +623,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n\n\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_1__[\"default\"](bizName);\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -659,7 +659,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n\nvar e = entry();\nvar drink = new _Drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"](e.field('Name'), e.field('Ingredients'), e.field('Prep Method(s)'), e.field('Drinkware'), e.field('Served'), e.field('Garnish(es)')); // Set fields for calculated entries;\n\nfunction setFields(fields) {\n  fields.keys.map(function (key) {\n    return set(key, fields[key]);\n  });\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n/* harmony import */ var _UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n\n\nvar userSettings = new _UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\nvar e = entry();\nvar drink = new _Drink__WEBPACK_IMPORTED_MODULE_1__[\"default\"](e.field('Name'), e.field('Ingredients'), e.field('Prep Method(s)'), e.field('Drinkware'), e.field('Served'), e.field('Garnish(es)')); // Set fields for calculated entries;\n\nfunction setFields(fields) {\n  fields.keys.map(function (key) {\n    return set(key, fields[key]);\n  });\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
 
 /***/ })
 
