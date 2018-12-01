@@ -1,5 +1,4 @@
-import UserSettings from './modules/UserSettings';
 import setFields from './modules/entry/setFields';
+import UserSettings from './modules/UserSettings';
 
 const userSettings = new UserSettings(bizName);
-const e = entry();
