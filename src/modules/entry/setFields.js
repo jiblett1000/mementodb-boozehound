@@ -1,5 +1,6 @@
 import Drink from '../Drink';
 
+const e = entry();
 const drink = new Drink(
   e.field('Name'),
   e.field('Prep Method(s)'),
