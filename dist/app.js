@@ -623,7 +623,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_usrPref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/usrPref */ \"./src/modules/usrPref.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\nvar usrPref = new _modules_usrPref__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\nvar e = entry();\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](bizName);\nvar e = entry();\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -639,6 +639,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/modules/UserSettings.js":
+/*!*************************************!*\
+  !*** ./src/modules/UserSettings.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return userSettings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar userSettings = function userSettings(bizName) {\n  _classCallCheck(this, userSettings);\n\n  this.bizName = bizName || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.bizName, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
+
+/***/ }),
+
 /***/ "./src/modules/entry/setFields.js":
 /*!****************************************!*\
   !*** ./src/modules/entry/setFields.js ***!
@@ -648,17 +660,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n\nvar drink = new _Drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"](); // Set fields for calculated entries;\n\nfunction setFields(fields) {\n  fields.keys.map(function (key) {\n    return set(key, fields[key]);\n  });\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
-
-/***/ }),
-
-/***/ "./src/modules/usrPref.js":
-/*!********************************!*\
-  !*** ./src/modules/usrPref.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/home/worm/Projects/mementodb-boozehound/src/modules/usrPref.js'\");\n\n//# sourceURL=webpack://boozehound/./src/modules/usrPref.js?");
 
 /***/ })
 

@@ -1,5 +1,5 @@
-import UserPref from './modules/usrPref';
+import UserSettings from './modules/UserSettings';
 import setFields from './modules/entry/setFields';
 
-const usrPref = new UserPref(bizName);
+const userSettings = new UserSettings(bizName);
 const e = entry();
