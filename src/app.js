@@ -12,6 +12,4 @@ function setInstance(instance) {
 }
 
 // Expose modules for use outside bundle;
-module.exports = {
-  setInstance,
-}
+export default { setInstance };
