@@ -619,11 +619,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: setInstance */
+/*! exports provided: setInstance, setFields */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setInstance\", function() { return setInstance; });\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n // Global shorthand variable;\n\nvar e = entry();\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](setInstance); // Main app function;\n\nfunction setInstance(instance) {\n  return userSettings;\n}\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setInstance\", function() { return setInstance; });\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n\n // Global shorthand variable;\n\nvar e = entry();\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](setInstance); // Main app function;\n\nfunction setInstance(instance) {\n  return userSettings;\n}\n\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
