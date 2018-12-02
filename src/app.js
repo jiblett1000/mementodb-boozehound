@@ -6,7 +6,7 @@ import UserSettings from './modules/UserSettings';
 var e = entry();
 
 // Main app function;
-export default function app(instance, functionName) {
+function app(instance, functionName) {
   // Instantiate user settings;
   const userSettings = new UserSettings(instance);
 
