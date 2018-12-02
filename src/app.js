@@ -6,9 +6,9 @@ import setFields from './modules/entry/setFields';
 var e = entry();
 
 // Main app function;
-export default function app(bizName, functionName) {
+export default function app(instance, functionName) {
   // Instantiate user settings;
-  const userSettings = new UserSettings(bizName);
+  const userSettings = new UserSettings(instance);
 
   return functionName();
 }
