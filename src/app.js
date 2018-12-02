@@ -11,7 +11,7 @@ function setInstance(instance) {
 
 function getSettings(instance) {
   // Instantiate user settings;
-  const userSettings = new UserSettings(instance);
+  let userSettings = new UserSettings(instance);
 }
 
 // Expose modules for use outside bundle;
