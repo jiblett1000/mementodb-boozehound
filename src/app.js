@@ -1,13 +1,12 @@
 import UserSettings from './modules/UserSettings';
 import setFields from './modules/entry/setFields';
 
-// Global shorthand variable;
-const e = entry();
+// Instantiate user settings;
 const userSettings = new UserSettings(setInstance);
 
-// Main app function;
+// Set app instance;
 function setInstance(instance) {
-  return userSettings;
+  return instance;
 }
 
 export { setInstance };

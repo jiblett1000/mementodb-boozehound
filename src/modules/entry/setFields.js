@@ -2,12 +2,12 @@
 import Drink from '../Drink';
 
 const drink = new Drink(
-  e.field('Name'),
-  e.field('Ingredients'),
-  e.field('Prep Method(s)'),
-  e.field('Drinkware'),
-  e.field('Served'),
-  e.field('Garnish(es)'),
+  entry().field('Name'),
+  entry().field('Ingredients'),
+  entry().field('Prep Method(s)'),
+  entry().field('Drinkware'),
+  entry().field('Served'),
+  entry().field('Garnish(es)'),
 );
 
 // Set fields for calculated entries;

@@ -19,14 +19,14 @@ export default function drinkInitialVol(ingredients) {
 // Calculate initial volume;
 
 function drinkInitialVol() {
-  e.set(drink.initialVol, drinkVol());
+  entry().set(drink.initialVol, drinkVol());
 }
 
 // Calculate final volume;
 
 function drinkFinVol() {
-  const initialVol = e.get(drink.initialVol);
-  const dilution = e.get(drinkDilution) / 100;
+  const initialVol = entry().get(drink.initialVol);
+  const dilution = entry().get(drinkDilution) / 100;
 
-  e.set(drink.finalVol, ((initialVol * dilution) + initialVol).toFixed(usrPref.decPlaceAcc()));
+  entry().set(drink.finalVol, ((initialVol * dilution) + initialVol).toFixed(usrPref.decPlaceAcc()));
 }

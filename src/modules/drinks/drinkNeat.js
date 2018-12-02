@@ -1,6 +1,6 @@
 function drinkNeat() {
   const e = entry();
-  const ingredients = e.field('Ingredients');
+  const ingredients = entry().field('Ingredients');
   const unitPlurals = {
     oz: 'oz',
     Barspoon: 'Barspoons',
@@ -24,5 +24,5 @@ function drinkNeat() {
     return (index < ingredients.length - 1) ? `${line} \n` : line;
   }, '');
 
-  e.set('Ingredients Neat', specs);
+  entry().set('Ingredients Neat', specs);
 }

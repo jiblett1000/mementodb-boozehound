@@ -2,8 +2,8 @@ function drinkGlassFilled() {
   const e = entry();
 
   if (drink.drinkware) {
-    const served = e.get(drink.served)[0].field('Name');
-    const finVol = e.field('Final Volume (oz)');
+    const served = entry().get(drink.served)[0].field('Name');
+    const finVol = entry().field('Final Volume (oz)');
     const drinkwareCapacity = drinkware[0].field('Capacity (oz)');
     const iceVols = {
       'On the Rocks': 0.0811,
@@ -18,8 +18,8 @@ function drinkGlassFilled() {
     const iceAmt = Math.floor(drinkwareCapacity / iceVol);
     const percent = ((finVol + (iceAmt * iceVol)) / drinkwareCapacity).toFixed(decPlaceAcc);
 
-    e.set('% of Glass Filled', percent * 100);
+    entry().set('% of Glass Filled', percent * 100);
   }
 
-  e.set('% of Glass Filled', 'Glassware not selected.');
+  entry().set('% of Glass Filled', 'Glassware not selected.');
 }

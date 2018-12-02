@@ -20,5 +20,5 @@ function drinkDilution(initialAbv, prepMethods) {
 
   // Change dilution into '50%' as opposed to '0.5' and then round. Set field.
 
-  e.set(drink.dilution, (dilutionPercent * 100).toFixed(userSettings.decPlaceAcc));
+  entry().set(drink.dilution, (dilutionPercent * 100).toFixed(userSettings.decPlaceAcc));
 }
