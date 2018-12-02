@@ -6,7 +6,7 @@ import setFields from './modules/entry/setFields';
 var e = entry();
 
 // Main app function;
-function app(bizName, functionName) {
+export default function app(bizName, functionName) {
   // Instantiate user settings;
   const userSettings = new UserSettings(bizName);
 
