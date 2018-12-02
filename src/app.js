@@ -5,7 +5,7 @@ import UserSettings from './modules/UserSettings';
 const e = entry();
 
 // Main app function;
-export default function setInstance(instance) {
+export function setInstance(instance) {
   let userSettings = new UserSettings(instance);
 
   return userSettings;

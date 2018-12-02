@@ -91,11 +91,11 @@ var boozehound =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: default */
+/*! exports provided: setInstance */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setInstance; });\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction setInstance(instance) {\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return userSettings;\n}\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setInstance\", function() { return setInstance; });\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction setInstance(instance) {\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return userSettings;\n}\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
