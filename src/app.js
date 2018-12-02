@@ -1,6 +1,6 @@
 
 import UserSettings from './modules/UserSettings';
-import setFields from './modules/entry/setFields';
+// import setFields from './modules/entry/setFields';
 
 // Global shorthand variable;
 var e = entry();
