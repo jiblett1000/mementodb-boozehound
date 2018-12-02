@@ -6,16 +6,12 @@ const e = entry();
 
 // Main app function;
 function setInstance(instance) {
-  return instance;
-}
-
-function getSettings(instance) {
-  // Instantiate user settings;
   let userSettings = new UserSettings(instance);
+
+  return userSettings;
 }
 
 // Expose modules for use outside bundle;
 module.exports = {
   setInstance,
-  getSettings,
 }
