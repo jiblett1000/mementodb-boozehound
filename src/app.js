@@ -1,13 +1,9 @@
 import UserSettings from './modules/UserSettings';
 import setFields from './modules/entry/setFields';
 
-// Instantiate user settings;
-const userSettings = new UserSettings(setInstance);
+export default function app(instance, desiredFunction) {
+  // Instantiate user settings;
+  const userSettings = new UserSettings(instance);
 
-// Set app instance;
-function setInstance(instance) {
-  return instance;
+  return desiredFunction;
 }
-
-export { setInstance };
-export { setFields };
