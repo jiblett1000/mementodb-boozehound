@@ -10,7 +10,7 @@ export default function app(bizName, functionName) {
   // Instantiate user settings;
   const userSettings = new UserSettings(bizName);
 
-  return functionName;
+  return functionName();
 }
 
 // MementoDB script should execute here;
