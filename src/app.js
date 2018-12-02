@@ -10,9 +10,9 @@ function getInstance(instance) {
 }
 
 // Instantiate user settings;
-const userSettings = new UserSettings(getInstance);
+const userSettings = new UserSettings(setInstance);
 
 // Expose modules for use outside bundle;
 module.exports = {
-  getInstance,
+  setInstance,
 }
