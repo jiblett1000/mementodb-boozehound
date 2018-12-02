@@ -1,9 +1,6 @@
 
-import UserSettings from '../UserSettings';
 import Drink from '../Drink';
 
-const userSettings = new UserSettings(bizName);
-const e = entry();
 const drink = new Drink(
   e.field('Name'),
   e.field('Ingredients'),
