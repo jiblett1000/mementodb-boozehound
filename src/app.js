@@ -2,14 +2,14 @@
 import UserSettings from './modules/UserSettings';
 // import setFields from './modules/entry/setFields';
 
+// Instantiate user settings;
+const userSettings = new UserSettings(instance);
+
 // Global shorthand variable;
 var e = entry();
 
 // Main app function;
 function app(instance, functionName) {
-  // Instantiate user settings;
-  const userSettings = new UserSettings(instance);
-
   return functionName();
 }
 
@@ -17,5 +17,3 @@ function app(instance, functionName) {
 module.exports = {
   app,
 }
-
-// MementoDB script should execute here;
