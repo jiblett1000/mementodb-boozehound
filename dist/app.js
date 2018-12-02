@@ -87,15 +87,26 @@ var boozehound =
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpackPolyfill) {\n\t\tvar module = Object.create(originalModule);\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"exports\", {\n\t\t\tenumerable: true\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n\n\n//# sourceURL=webpack://boozehound/(webpack)/buildin/harmony-module.js?");
+
+/***/ }),
+
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: default */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // import setFields from './modules/entry/setFields';\n// Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction app(instance, functionName) {\n  // Instantiate user settings;\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return functionName();\n} // Expose modules for use outside bundle;\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (app); // MementoDB script should execute here;\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // import setFields from './modules/entry/setFields';\n// Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction app(instance, functionName) {\n  // Instantiate user settings;\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return functionName();\n} // Expose modules for use outside bundle;\n\n\nmodule.exports = {\n  app: app // MementoDB script should execute here;\n\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ \"./node_modules/webpack/buildin/harmony-module.js\")(module)))\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
