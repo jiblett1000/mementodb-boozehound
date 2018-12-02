@@ -5,7 +5,7 @@ import UserSettings from './modules/UserSettings';
 const e = entry();
 
 // Main app function;
-function getInstance(instance) {
+function setInstance(instance) {
   return instance;
 }
 
