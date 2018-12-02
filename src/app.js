@@ -5,11 +5,8 @@ import UserSettings from './modules/UserSettings';
 const e = entry();
 
 // Main app function;
-function setInstance(instance) {
+export default function setInstance(instance) {
   let userSettings = new UserSettings(instance);
 
   return userSettings;
 }
-
-// Expose modules for use outside bundle;
-export default setInstance;
