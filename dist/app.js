@@ -95,7 +95,7 @@ var boozehound =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction setInstance(instance) {\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return userSettings;\n} // Expose modules for use outside bundle;\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  setInstance: setInstance\n});\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n // Global shorthand variable;\n\nvar e = entry(); // Main app function;\n\nfunction setInstance(instance) {\n  var userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"](instance);\n  return userSettings;\n} // Expose modules for use outside bundle;\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setInstance);\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
