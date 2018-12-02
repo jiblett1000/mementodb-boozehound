@@ -13,4 +13,7 @@ function app(instance, functionName) {
   return functionName();
 }
 
+// Expose modules for use outside bundle;
+export default app;
+
 // MementoDB script should execute here;
