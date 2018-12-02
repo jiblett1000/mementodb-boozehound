@@ -115,10 +115,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
   !*** ./src/modules/UserSettings.js ***!
   \*************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return UserSettings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.instance = instance || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/home/worm/Projects/mementodb-boozehound/src/modules/UserSettings.js'\");\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
 
 /***/ })
 
