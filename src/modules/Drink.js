@@ -146,4 +146,8 @@ export default class Drink {
 
     return 'Drinkware not selected';
   }
+
+  update() {
+    this.fields.keys.map(key => entry().set(key, this.fields[key]));
+  }
 }
