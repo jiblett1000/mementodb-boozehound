@@ -1,4 +1,4 @@
-export default class UserSettings {
+class UserSettings {
   constructor(instance) {
     this.instance = instance || 'Boozehound';
     this.volUnits = libByName(`${this.instance} Settings`).findByKey('Volume Units').field('Value');
@@ -7,3 +7,5 @@ export default class UserSettings {
     this.decPlaceAcc = libByName(`${this.instance} Settings`).findByKey('Decimal Place Accuracy').field('Value');
   }
 }
+
+export { UserSettings };
