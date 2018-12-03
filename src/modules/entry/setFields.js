@@ -1,7 +1,5 @@
-import UserSettings from '../UserSettings';
 import Drink from '../Drink';
 
-const userSettings = new UserSettings(setInstance)
 const drink = new Drink(
   entry().field('Name'),
   entry().field('Ingredients'),

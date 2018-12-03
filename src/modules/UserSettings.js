@@ -8,4 +8,4 @@ class UserSettings {
   }
 }
 
-export { UserSettings };
+export default UserSettings;

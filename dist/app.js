@@ -619,11 +619,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: UserSettings, app */
+/*! exports provided: setFields, app */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"app\", function() { return app; });\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"UserSettings\", function() { return _modules_UserSettings__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n\n\n\nfunction app(instance, desiredFunction) {\n  return userSettings.instance;\n}\n\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"app\", function() { return app; });\n/* harmony import */ var _modules_libraries__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/libraries */ \"./src/modules/libraries.js\");\n/* harmony import */ var _modules_getInstance__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getInstance */ \"./src/modules/getInstance.js\");\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_3__[\"default\"]; });\n\n\n\n\n\nvar instance = Object(_modules_getInstance__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_modules_libraries__WEBPACK_IMPORTED_MODULE_0__[\"instanceLibs\"]);\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_2__[\"default\"](instance);\n\nfunction app(instance, desiredFunction) {\n  return userSettings.instance;\n} // MementoDB script called here;\n\n\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -647,7 +647,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return UserSettings; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.instance = instance || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.instance = instance || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UserSettings);\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
 
 /***/ }),
 
@@ -660,6 +660,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return setFields; });\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n\nvar drink = new _Drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"](entry().field('Name'), entry().field('Ingredients'), entry().field('Prep Method(s)'), entry().field('Drinkware'), entry().field('Served'), entry().field('Garnish(es)')); // Set fields for calculated entries;\n\nfunction setFields(fields) {\n  fields.keys.map(function (key) {\n    return entry().set(key, fields[key]);\n  });\n}\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getInstance.js":
+/*!************************************!*\
+  !*** ./src/modules/getInstance.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction getInstance(libs) {\n  // Match the current lib to generic library;\n  var libMatch = libs.find(function (instanceLib) {\n    return lib().title.includes(instanceLib);\n  }); // Return the current library name minus the generic library to get the instance;\n\n  return lib().title.split(\" \".concat(libMatch))[0];\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getInstance);\n\n//# sourceURL=webpack://boozehound/./src/modules/getInstance.js?");
+
+/***/ }),
+
+/***/ "./src/modules/libraries.js":
+/*!**********************************!*\
+  !*** ./src/modules/libraries.js ***!
+  \**********************************/
+/*! exports provided: instanceLibs, sharedLibs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"instanceLibs\", function() { return instanceLibs; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sharedLibs\", function() { return sharedLibs; });\nvar instanceLibs = ['Settings', 'Drinks', 'Inventory', 'Things', 'POS Items', 'Orders', 'Drinkware'];\nvar sharedLibs = ['Boozehound Things', 'Boozehound Distributors', 'Boozehound Places', 'Boozehound People', 'Boozehound Drink Serving Methods', 'Boozehound Drink Prep Methods', 'Boozehound Thing Categories'];\n\n\n//# sourceURL=webpack://boozehound/./src/modules/libraries.js?");
 
 /***/ })
 
