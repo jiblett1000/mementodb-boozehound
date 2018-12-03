@@ -11,5 +11,6 @@ function app(instance, desiredFunction) {
 }
 
 // MementoDB script called here;
+export { userSettings };
 export { setFields };
 export { app };
