@@ -1,4 +1,4 @@
-import UserSettings from './UserSettings';
+import userSettings from './userSettings';
 
 const convert = require('convert-units');
 
@@ -56,14 +56,14 @@ export default class Drink {
       const amt = ingredient.attr('Amount');
       const cost = ingredient.field('Cost');
 
-      return sum + (convert(amt).from(unit).to(UserSettings.volUnits) * cost);
+      return sum + (convert(amt).from(unit).to(userSettings.volUnits) * cost);
     }, 0);
 
     // Calculate cost of garnish(es);
     const garnishTotal = this.garnishes.reduce((sum, garnish) => sum + garnish.field('Cost'), 0);
 
     // Add ingredient and Garnish costs together;
-    return (ingredientTotal + garnishTotal).toFixed(UserSettings.decPlaceAcc);
+    return (ingredientTotal + garnishTotal).toFixed(userSettings.decPlaceAcc);
   }
 
   get initialVol() {
@@ -71,10 +71,10 @@ export default class Drink {
       const unit = ingredient.attr('Unit');
       const amt = ingredient.attr('Amount');
 
-      return sum + convert(amt).from(unit).to(UserSettings.volUnits);
+      return sum + convert(amt).from(unit).to(userSettings.volUnits);
     }, 0);
 
-    return vol.toFixed(UserSettings.decPlaceAcc());
+    return vol.toFixed(userSettings.decPlaceAcc());
   }
 
   get ingredientsAbv() {
@@ -84,7 +84,7 @@ export default class Drink {
         const abv = ingredient.field('ABV');
         const amt = ingredient.attr('Amount');
 
-        return sum + (convert(amt).from(unit).to(UserSettings.volUnits) * abv);
+        return sum + (convert(amt).from(unit).to(userSettings.volUnits) * abv);
       }
       return sum + 0;
     }, 0);
@@ -93,7 +93,7 @@ export default class Drink {
   }
 
   get initialAbv() {
-    return (this.ingredientsAbv / this.initialVol).toFixed(UserSettings.decPlaceAcc);
+    return (this.ingredientsAbv / this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get dilution() {
@@ -119,11 +119,11 @@ export default class Drink {
   }
 
   get finVol() {
-    return ((this.initialVol * this.dilution) + this.initialVol).toFixed(UserSettings.decPlaceAcc);
+    return ((this.initialVol * this.dilution) + this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get finAbv() {
-    return (this.ingredientsAbv / this.finVol).toFixed(UserSettings.decPlaceAcc);
+    return (this.ingredientsAbv / this.finVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get glassFilled() {
@@ -143,7 +143,7 @@ export default class Drink {
       const iceAmt = Math.floor(capacity / iceVol);
       const percent = ((this.finVol + (iceAmt * iceVol)) / capacity);
 
-      return (percent * 100).toFixed(UserSettings.decPlaceAcc);
+      return (percent * 100).toFixed(userSettings.decPlaceAcc);
     }
 
     return 'Drinkware not selected';
