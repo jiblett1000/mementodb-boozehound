@@ -619,11 +619,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: setFields */
+/*! exports provided: instance, userSettings, setFields */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n // MementoDB script called here;\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"instance\", function() { return instance; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"userSettings\", function() { return userSettings; });\n/* harmony import */ var _modules_getInstance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/getInstance */ \"./src/modules/getInstance.js\");\n/* harmony import */ var _modules_UserSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_2__[\"default\"]; });\n\n\n\n\nvar instance = Object(_modules_getInstance__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nvar userSettings = new _modules_UserSettings__WEBPACK_IMPORTED_MODULE_1__[\"default\"](instance); // MementoDB script called here;\n\n\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
@@ -647,7 +647,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.instance = instance();\n  this.volUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UserSettings);\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.volUnits = libByName(\"\".concat(instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UserSettings);\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
 
 /***/ }),
 
@@ -659,7 +659,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(inst
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _getInstance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../getInstance */ \"./src/modules/getInstance.js\");\n/* harmony import */ var _UserSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../UserSettings */ \"./src/modules/UserSettings.js\");\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n\n\n // Set fields for calculated entries;\n\nfunction setFields() {\n  var userSettings = new _UserSettings__WEBPACK_IMPORTED_MODULE_1__[\"default\"](_getInstance__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n  var fields = new _Drink__WEBPACK_IMPORTED_MODULE_2__[\"default\"](entry().field('Name'), entry().field('Ingredients'), entry().field('Prep Method(s)'), entry().field('Drinkware'), entry().field('Served'), entry().field('Garnish(es)'));\n  fields.keys.map(function (key) {\n    return entry().set(key, fields[key]);\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setFields);\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Drink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Drink */ \"./src/modules/Drink.js\");\n // Set fields for calculated entries;\n\nfunction setFields() {\n  var fields = new _Drink__WEBPACK_IMPORTED_MODULE_0__[\"default\"](entry().field('Name'), entry().field('Ingredients'), entry().field('Prep Method(s)'), entry().field('Drinkware'), entry().field('Served'), entry().field('Garnish(es)'));\n  fields.keys.map(function (key) {\n    return entry().set(key, fields[key]);\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setFields);\n\n//# sourceURL=webpack://boozehound/./src/modules/entry/setFields.js?");
 
 /***/ }),
 
