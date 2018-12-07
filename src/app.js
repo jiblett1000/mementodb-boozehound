@@ -1,4 +1,4 @@
-import getInstance from './modules/getInstance';
+import init from './modules/init';
 
 // MementoDB script called here;
-export { getInstance };
+export { init };

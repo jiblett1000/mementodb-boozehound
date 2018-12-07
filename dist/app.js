@@ -91,11 +91,23 @@ var boozehound =
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: getInstance */
+/*! exports provided: init */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_getInstance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/getInstance */ \"./src/modules/getInstance.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getInstance\", function() { return _modules_getInstance__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n // MementoDB script called here;\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/init */ \"./src/modules/init.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"init\", function() { return _modules_init__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n // MementoDB script called here;\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/modules/UserSettings.js":
+/*!*************************************!*\
+  !*** ./src/modules/UserSettings.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar UserSettings = function UserSettings(instance) {\n  _classCallCheck(this, UserSettings);\n\n  this.instance = instance || 'Boozehound';\n  this.volUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Volume Units').field('Value');\n  this.massUnits = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Mass Units').field('Value');\n  this.salesTaxRate = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Sales Tax Rate').field('Value');\n  this.decPlaceAcc = libByName(\"\".concat(this.instance, \" Settings\")).findByKey('Decimal Place Accuracy').field('Value');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UserSettings);\n\n//# sourceURL=webpack://boozehound/./src/modules/UserSettings.js?");
 
 /***/ }),
 
@@ -108,6 +120,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _libraries__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libraries */ \"./src/modules/libraries.js\");\n\n\nfunction getInstance() {\n  // Match the current lib to generic library;\n  var libMatch = _libraries__WEBPACK_IMPORTED_MODULE_0__[\"instanceLibs\"].find(function (instance) {\n    return lib().title.includes(instance);\n  }); // Return the current library name minus the generic library to get the instance;\n\n  return lib().title.split(\" \".concat(libMatch))[0];\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getInstance);\n\n//# sourceURL=webpack://boozehound/./src/modules/getInstance.js?");
+
+/***/ }),
+
+/***/ "./src/modules/init.js":
+/*!*****************************!*\
+  !*** ./src/modules/init.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _libraries__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libraries */ \"./src/modules/libraries.js\");\n/* harmony import */ var _getInstance__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getInstance */ \"./src/modules/getInstance.js\");\n/* harmony import */ var _UserSettings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserSettings */ \"./src/modules/UserSettings.js\");\n\n\n\n\nfunction init() {\n  var instance = Object(_getInstance__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_libraries__WEBPACK_IMPORTED_MODULE_0__[\"instanceLibs\"]);\n  var userSettings = new _UserSettings__WEBPACK_IMPORTED_MODULE_2__[\"default\"](instance);\n  return userSettings;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (init);\n\n//# sourceURL=webpack://boozehound/./src/modules/init.js?");
 
 /***/ }),
 
