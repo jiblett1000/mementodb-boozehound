@@ -619,11 +619,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: default */
+/*! exports provided: setFields */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n // MementoDB script called here;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entry/setFields */ \"./src/modules/entry/setFields.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"setFields\", function() { return _modules_entry_setFields__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n // MementoDB script called here;\n\n\n\n//# sourceURL=webpack://boozehound/./src/app.js?");
 
 /***/ }),
 
