@@ -3,8 +3,7 @@ import Drink from '../Drink';
 
 // Set fields for calculated entries;
 function setFields() {
-  init();
-
+  const userSettings = init();
   const fields = new Drink(
     entry().field('Name'),
     entry().field('Ingredients'),
