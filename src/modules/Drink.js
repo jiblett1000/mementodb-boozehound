@@ -74,7 +74,7 @@ export default class Drink {
       return sum + convert(amt).from(unit).to(userSettings.volUnits);
     }, 0);
 
-    return vol.toFixed(userSettings.decPlaceAcc());
+    return vol.toFixed(userSettings.decPlaceAcc);
   }
 
   get ingredientsAbv() {
