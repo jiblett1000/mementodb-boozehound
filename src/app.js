@@ -14,3 +14,4 @@ function app(instance, desiredFunction) {
 export { UserSettings };
 export { setFields };
 export { app };
+export { getInstance };
