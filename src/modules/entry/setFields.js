@@ -2,10 +2,10 @@ import init from '../init';
 import Drink from '../Drink';
 
 // Set fields for calculated entries;
-function setFields(fields) {
+function setFields() {
   init();
 
-  const drink = new Drink(
+  const fields = new Drink(
     entry().field('Name'),
     entry().field('Ingredients'),
     entry().field('Prep Method(s)'),
