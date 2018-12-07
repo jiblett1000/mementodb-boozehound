@@ -12,7 +12,7 @@ export default class Drink {
     this.garnishes = garnishes;
     this.fields = {
       'Ingredients Neat': this.ingredientsNeat,
-      'COGS': this.cogs,
+      // 'COGS': this.cogs,
       'Initial Volume': this.initialVol,
       'Initial ABV': this.initialAbv,
       'Dilution %': this.dilution,
@@ -49,6 +49,7 @@ export default class Drink {
     return specs;
   }
 
+  /*
   get cogs() {
     // Calculate cost of ingredients;
     const ingredientTotal = this.ingredients.reduce((sum, ingredient) => {
@@ -65,6 +66,7 @@ export default class Drink {
     // Add ingredient and Garnish costs together;
     return +(ingredientTotal + garnishTotal).toFixed(userSettings.decPlaceAcc);
   }
+  */
 
   get initialVol() {
     const vol = this.ingredients.reduce((sum, ingredient) => {
