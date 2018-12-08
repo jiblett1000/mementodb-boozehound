@@ -76,7 +76,7 @@ export default class Drink {
       return sum + convert(amt).from(unit).to(userSettings.volUnits);
     }, 0);
 
-    return +vol.toFixed(userSettings.decPlaceAcc);
+    return vol.toFixed(userSettings.decPlaceAcc);
   }
 
   get ingredientsAbv() {
@@ -95,7 +95,7 @@ export default class Drink {
   }
 
   get initialAbv() {
-    return +(this.ingredientsAbv / this.initialVol).toFixed(userSettings.decPlaceAcc);
+    return (this.ingredientsAbv / this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get dilution() {
@@ -121,11 +121,11 @@ export default class Drink {
   }
 
   get finVol() {
-    return (+(this.initialVol * this.dilution) + this.initialVol).toFixed(userSettings.decPlaceAcc);
+    return ((this.initialVol * this.dilution) + this.initialVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get finAbv() {
-    return +(this.ingredientsAbv / this.finVol).toFixed(userSettings.decPlaceAcc);
+    return (this.ingredientsAbv / this.finVol).toFixed(userSettings.decPlaceAcc);
   }
 
   get glassFilled() {
@@ -145,7 +145,7 @@ export default class Drink {
       const iceAmt = Math.floor(capacity / iceVol);
       const percent = ((this.finVol + (iceAmt * iceVol)) / capacity);
 
-      return +(percent * 100).toFixed(userSettings.decPlaceAcc);
+      return (percent * 100).toFixed(userSettings.decPlaceAcc);
     }
 
     return 'Drinkware not selected';
