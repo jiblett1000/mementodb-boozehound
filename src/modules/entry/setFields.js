@@ -2,7 +2,7 @@ import Drink from '../Drink';
 
 // Set fields for calculated entries;
 function setFields() {
-  const fields = new Drink(
+  const drink = new Drink(
     entry().field('Name'),
     entry().field('Ingredients'),
     entry().field('Prep Method(s)'),
@@ -11,7 +11,7 @@ function setFields() {
     entry().field('Garnish(es)'),
   );
 
-  fields.keys.map(key => entry().set(key, fields[key]));
+  drink.fields.keys.map(key => entry().set(key, fields[key]));
 }
 
 export default setFields;
