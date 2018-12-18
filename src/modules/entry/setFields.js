@@ -11,7 +11,7 @@ function setFields() {
     entry().field('Garnish(es)'),
   );
 
-  drink.fields.keys.map(key => entry().set(key, fields[key]));
+  drink.fields.keys.map(key => entry().set(key, drink[key]));
 }
 
 export default setFields;
