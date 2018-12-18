@@ -14,11 +14,11 @@ export default class Drink {
       'Ingredients Neat': this.ingredientsNeat,
       // 'COGS': this.cogs,
       'Initial Volume': this.initialVol,
-      'Initial ABV': this.initialAbv,
+      /*'Initial ABV': this.initialAbv,
       'Dilution %': this.dilution,
       'Final Volume': this.finVol,
       'Final ABV': this.finAbv,
-      '% of Glass Filled': this.glassFilled,
+      '% of Glass Filled': this.glassFilled,*/
     };
   }
 
@@ -76,9 +76,9 @@ export default class Drink {
       return sum + convert(amt).from(unit).to(userSettings.volUnits);
     }, 0);
 
-    return vol.toFixed(userSettings.decPlaceAcc);
+    return vol;// .toFixed(userSettings.decPlaceAcc);
   }
-
+/*
   get ingredientsAbv() {
     const ingredientsAbv = this.ingredients.reduce((sum, ingredient) => {
       if (ingredient.field('ABV')) {
@@ -154,4 +154,6 @@ export default class Drink {
   update() {
     this.fields.keys.map(key => entry().set(key, this.fields[key]));
   }
+
+  */
 }
